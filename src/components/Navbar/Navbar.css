@@ -1,3 +1,17 @@
-.nav {
-  background-color: blueviolet;
+.navbar {
+  width: 100vw;
+  height: 15vh;
+  background-color: #fff;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 5% 0;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.navbar__logo {
+  display: flex;
+  height: 34px;
+  width: 202px;
+  position: relative;
 }
