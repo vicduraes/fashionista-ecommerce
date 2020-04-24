@@ -1,0 +1,39 @@
+.itens-count{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    margin: 0 auto;
+    
+}
+
+.itens-count span{
+    height: 1px;
+    width: 50%;
+    
+    background-color:  #C4C4C4;
+}
+
+.itens-count p{
+    padding: 0 30px;
+    width: 8%;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+    
+    color: #8B8B8B;
+    
+}
+
+@media (max-width: 768px) {
+    .itens-count p{
+        width: 10%;
+    } 
+    
+}
+
+@media (max-width: 411px) {
+    .itens-count p{
+        width: 40%;
+    }
+}
