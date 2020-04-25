@@ -1,0 +1,28 @@
+
+.navbar__shoppingcart--badge:after {
+    content: attr(data-count);
+    background: var(--color-primary);
+    padding: 10% 15%;
+    position:absolute;
+    top: -35%;
+    right: -15%;
+    font-family: sans-serif;
+    text-align: center;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 50%;
+    color: white;
+    border: 1px solid var(--color-primary);
+  }
+
+  .navbar__shoppingcart {
+    display: flex;
+    align-content: space-around;
+    text-align: center;
+    vertical-align: middle;
+    position: relative;
+    font-size: 140%;
+    border: none;
+    background: #fff;
+
+  }

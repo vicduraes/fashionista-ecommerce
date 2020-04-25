@@ -1,5 +1,5 @@
 import React from "react";
-import Carrinho from "../Carrinho/Carrinho.jsx";
+import ShoppingCart from "../ShoppingCart/ShoppingCart.jsx";
 import Busca from "../Busca/Busca";
 import BotaoVoltar from "../BotaoVoltar/BotaoVoltar";
 import logo from "../../images/logo.png";
@@ -10,7 +10,7 @@ const Navbar = () => {
     <div className="navbar">
       <BotaoVoltar />
       <img alt="logo da Fashionista" className="navbar__logo" src={logo} />
-      <Carrinho />
+      <ShoppingCart />
       <Busca />
     </div>
   );
