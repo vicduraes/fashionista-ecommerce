@@ -1,0 +1,32 @@
+.busca {
+  width: 100%;
+  display: flex;
+  /* align-self: center; */
+  justify-content: center;
+}
+
+.busca__input {
+  width: 80%;
+  border: 1px solid #c4c4c4;
+  padding: 5px;
+  height: 30px;
+  border-radius: 7px;
+  outline: none;
+  font-size: 18px;
+}
+
+.busca__input:focus {
+  border: 2px solid var(--color-primary);
+}
+
+.busca__botao {
+  width: 30px;
+  height: 36px;
+  position: absolute;
+  border: none;
+  background: #fff;
+  margin: 5px 0 0 34%;
+  color: #000;
+  cursor: pointer;
+  font-size: 20px;
+}
