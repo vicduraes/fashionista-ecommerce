@@ -10,8 +10,7 @@ const Home = () => {
       <Navbar />
       <h1 className="home">HOME</h1>
       <ItensCount totalCount='22' />
-      <ScrollToTop/>
-      
+      <ScrollToTop/>      
     </>
   );
 };
