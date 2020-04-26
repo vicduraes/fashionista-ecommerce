@@ -1,14 +1,11 @@
-.home {
-  color: var(--color-primary);
-}
-
 .catalog {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: center;
 }
 
 .container {
   width: 92%;
+  max-width: 1200px;
   margin: 0 auto;
 }
