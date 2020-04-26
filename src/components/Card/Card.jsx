@@ -1,7 +1,8 @@
 import React from 'react';
+
 import './Card.scss';
 
-import ImgDefault from '../../images/img-default.jpeg';
+import ImgDefault from '../../assets/images/img-default.jpeg';
 
 const Card = () => {
   return (
