@@ -1,0 +1,14 @@
+.home {
+  color: var(--color-primary);
+}
+
+.catalog {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.container {
+  width: 92%;
+  margin: 0 auto;
+}
