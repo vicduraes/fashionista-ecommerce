@@ -13,6 +13,7 @@ const Home = () => {
       <Navbar />
       <ItensCount totalCount="22" />
       <ScrollToTop />
+      <h1 className="home">Catálogo</h1>
       <div className="container">
         <div className="catalog">
           <Card />
