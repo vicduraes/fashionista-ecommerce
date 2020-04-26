@@ -1,7 +1,7 @@
-@import '../../styles/_variables.css';
+@import '../../assets/stylesheets/_variables.css';
 
 .card {
-  margin-bottom: 20px;
+  margin: 0 10px 20px;
   text-align: center;
 
   &__img {
@@ -12,7 +12,7 @@
       max-width: 170px;
       height: auto;
       border-radius: 15px;
-      box-shadow: 0px 4px 60px rgba(0, 0, 0, 0.2);
+      box-shadow: 0px 4px 60px rgba(48, 47, 47, 0.2);
     }
   }
 
@@ -62,7 +62,7 @@
   }
 
   @media only screen and (min-width: 768px) {
-    margin-bottom: 56px;
+    margin: 0 25px 56px;
 
     &__img {
       img {
