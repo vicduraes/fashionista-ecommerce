@@ -11,10 +11,8 @@ const Home = () => {
   return (
     <>
       <Navbar />
-      <h1 className="home">HOME</h1>
       <ItensCount totalCount="22" />
       <ScrollToTop />
-      <h1 className="home">Catálogo</h1>
       <div className="container">
         <div className="catalog">
           <Card />
