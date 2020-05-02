@@ -1,11 +1,11 @@
-.busca {
+.search {
   width: 100%;
   display: flex;
   /* align-self: center; */
   justify-content: center;
 }
 
-.busca__input {
+.search__input {
   width: 80%;
   border: 1px solid #c4c4c4;
   padding: 5px;
@@ -15,11 +15,11 @@
   font-size: 18px;
 }
 
-.busca__input:focus {
+.search__input:focus {
   border: 2px solid var(--color-primary);
 }
 
-.busca__botao {
+.search__button {
   width: 30px;
   height: 36px;
   position: absolute;

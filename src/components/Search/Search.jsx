@@ -1,21 +1,21 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
-import "./Busca.css";
+import "./Search.css";
 
-const Busca = () => {
+const Search = () => {
   return (
-    <div className="busca">
+    <div className="search">
       <input
         type="text"
         placeholder="O que você procura?"
-        className="busca__input"
+        className="search__input"
       ></input>
-      <button type="submit" className="busca__botao">
+      <button type="submit" className="search__button">
         <FontAwesomeIcon icon={faSearch} />
       </button>
     </div>
   );
 };
 
-export default Busca;
+export default Search;

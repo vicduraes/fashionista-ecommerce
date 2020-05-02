@@ -1,8 +1,8 @@
 import React from "react";
 import ShoppingCart from "../ShoppingCart/ShoppingCart.jsx";
-import Busca from "../Busca/Busca";
+import Search from "../Search/Search";
 import BotaoVoltar from "../BotaoVoltar/BotaoVoltar";
-import logo from "../../images/logo.png";
+import logo from "../../assets/images/logo.png";
 import "./Navbar.css";
 
 const Navbar = () => {
@@ -11,7 +11,7 @@ const Navbar = () => {
       <BotaoVoltar />
       <img alt="logo da Fashionista" className="navbar__logo" src={logo} />
       <ShoppingCart />
-      <Busca />
+      <Search />
     </div>
   );
 };

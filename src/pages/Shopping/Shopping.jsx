@@ -1,7 +1,7 @@
 import React from "react";
 
-const CarrinhoDeCompra = () => {
+const Shopping = () => {
   return <h1>HORA DE COMPRAR</h1>;
 };
 
-export default CarrinhoDeCompra;
+export default Shopping;
