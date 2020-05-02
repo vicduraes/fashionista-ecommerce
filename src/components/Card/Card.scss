@@ -1,4 +1,4 @@
-@import '../../assets/stylesheets/_variables.css';
+@import '../../assets/stylesheets/_variables.scss';
 
 .card {
   margin: 0 10px 20px;
@@ -26,7 +26,7 @@
     top: 10px;
     left: 13px;
     border-radius: 5px;
-    background-color: var(--color-primary);
+    background-color: $color-primary;
     color: #fff;
     font-weight: 600;
     font-size: 12px;
