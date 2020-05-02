@@ -2,13 +2,13 @@ import React from 'react';
 
 import './Card.scss';
 
-import ImgDefault from '../../assets/images/img-default.jpeg';
+import imgDefault from '../../assets/images/img-default.jpeg';
 
 const Card = () => {
   return (
     <div className="card">
       <figure className="card__img">
-        <img src={ImgDefault} alt="vestido transpasse" />
+        <img src={imgDefault} alt="vestido transpasse" />
         <span className="card__discount"> - 23%</span>
       </figure>
 
