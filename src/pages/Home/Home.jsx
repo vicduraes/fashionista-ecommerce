@@ -1,12 +1,30 @@
 import React from 'react';
+
 import Navbar from '../../components/Navbar/Navbar';
-import './Home.css';
+import ScrollToTop from '../../components/ScrollToTop/ScrollToTop';
+import ItensCount from '../../components/ItensCount/ItensCount';
+import Card from '../../components/Card/Card';
+
+import './Home.scss';
 
 const Home = () => {
   return (
     <>
       <Navbar />
-      <h1 className="home">HOME</h1>
+      <div className="container">
+        <ItensCount totalCount="22" />
+        <ScrollToTop />
+        <div className="catalog">
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+        </div>
+      </div>
     </>
   );
 };
