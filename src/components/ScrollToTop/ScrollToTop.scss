@@ -1,0 +1,15 @@
+@import '../../assets/stylesheets/_variables.scss';
+
+.scroll-to-top {
+  width: 47px;
+  height: 47px;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  border: none;
+  border-radius: 50px;
+  margin: 0 30px 30px 0;
+
+  background-color: $color-primary;
+  color: $color-white;
+}
