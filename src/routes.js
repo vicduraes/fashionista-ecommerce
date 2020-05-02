@@ -1,14 +1,14 @@
-import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import React from "react";
+import { Route, Switch } from "react-router-dom";
 
-import Home from './pages/Home/Home';
-import Detalhe from './pages/Detalhe/Detalhe';
-import CarrinhoDeCompra from './pages/CarrinhoDeCompra/CarrinhoDeCompra';
+import Home from "./pages/Home/Home";
+import ProductDetail from "./pages/ProductDetail/ProductDetail";
+import Shopping from "./pages/Shopping/Shopping";
 
 export default () => (
   <Switch>
-    <Route path="/detalhe-catalogo" component={Detalhe} />
-    <Route path="/carrinho-compra" component={CarrinhoDeCompra} />
+    <Route path="/detalhe-produto" component={ProductDetail} />
+    <Route path="/finalizar-compra" component={Shopping} />
     <Route path="*" component={Home} />
   </Switch>
 );
