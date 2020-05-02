@@ -1,7 +1,6 @@
 .search {
   width: 100%;
   display: flex;
-  /* align-self: center; */
   justify-content: center;
 }
 
@@ -12,7 +11,8 @@
   height: 30px;
   border-radius: 7px;
   outline: none;
-  font-size: 18px;
+  font-size: 15px;
+  margin-top: 2%;
 }
 
 .search__input:focus {
@@ -20,13 +20,37 @@
 }
 
 .search__button {
-  width: 30px;
-  height: 36px;
+  width: 26px;
+  height: 20px;
   position: absolute;
   border: none;
   background: #fff;
-  margin: 5px 0 0 34%;
+  margin: 4.5% 0 0 34%;
   color: #000;
   cursor: pointer;
   font-size: 20px;
+}
+
+@media only screen and (min-width: 768px) {
+  .search__button {
+    margin: 3.5% 0 0 36%;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .search {
+    width: 10%;
+    justify-content: initial;
+  }
+
+  .search__input {
+    display: none;
+  }
+
+  .search__button {
+    margin: 0;
+    font-size: 20px;
+    position: unset;
+    display: flex;
+  }
 }
