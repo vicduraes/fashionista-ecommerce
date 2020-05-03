@@ -1,14 +1,14 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
-import "./BotaoVoltar.css";
+import "./BackArrowIcon.scss";
 
-const BotaoVoltar = () => {
+const BackArrowIcon = () => {
   return (
-    <div className="botao-voltar">
+    <div className="back-arrow">
       <FontAwesomeIcon icon={faArrowLeft} />
     </div>
   );
 };
 
-export default BotaoVoltar;
+export default BackArrowIcon;
