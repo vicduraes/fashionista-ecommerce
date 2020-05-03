@@ -1,15 +1,15 @@
-import React from 'react';
+import React from "react";
 
-import Navbar from '../../components/Navbar/Navbar';
-import ScrollToTop from '../../components/ScrollToTop/ScrollToTop';
-import ItensCount from '../../components/ItensCount/ItensCount';
-import Card from '../../components/Card/Card';
+import Navbar from "../../components/Navbar/Navbar";
+import ScrollToTop from "../../components/ScrollToTop/ScrollToTop";
+import ItensCount from "../../components/ItensCount/ItensCount";
+import Card from "../../components/Card/Card";
 
-import './Home.scss';
+import "./Home.scss";
 
 const Home = () => {
   return (
-    <>
+    <div className="home">
       <Navbar />
       <div className="container">
         <ItensCount totalCount="22" />
@@ -25,7 +25,7 @@ const Home = () => {
           <Card />
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
