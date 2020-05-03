@@ -1,0 +1,38 @@
+@import '../../assets/stylesheets/_variables.scss';
+
+  .shoppingcart {
+    position: relative;
+    
+    display: flex;
+    border: none;
+    vertical-align: middle;
+    align-content: space-around;
+    
+    background: $color-white;
+    
+    text-align: center;
+    font-size: $font-size-20;
+
+    &--badge:after {
+      position:absolute;
+      top: -35%;
+      right: -15%;
+  
+      width: 1.125rem;
+      height: 1.125rem;
+      line-height: 1.125rem;
+      border: 1px solid $color-primary;
+      border-radius: 50%;
+      
+      background: $color-primary;
+      color: $color-white;
+      
+      font-family: sans-serif;
+      text-align: center;
+      font-size: $font-size-12;
+      font-weight: bold;
+      
+      content: attr(data-count);
+    }
+
+  }
