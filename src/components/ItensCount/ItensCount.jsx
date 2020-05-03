@@ -1,5 +1,5 @@
 import React from 'react';
-import './ItensCount.css';
+import './ItensCount.scss';
 
 const ItensCount = (props) => {
   return (
