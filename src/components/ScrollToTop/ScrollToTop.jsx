@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, useState } from 'react';
-import './ScrollToTop.css';
+import './ScrollToTop.scss';
 
 const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetBottom);
 
