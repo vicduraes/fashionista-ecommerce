@@ -5,9 +5,9 @@ import "./ShoppingCart.scss";
 
 const ShoppingCart = () => {
   return (
-    <button type="submit" className="shoppingcart">
+    <button type="submit" className="shopping-cart">
       <FontAwesomeIcon icon={faShoppingCart}/>
-      <i data-count="2" className="shoppingcart--badge"></i>
+      <i data-count="2" className="shopping-cart--badge"></i>
     </button>
   );
 };
