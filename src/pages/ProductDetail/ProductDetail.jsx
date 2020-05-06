@@ -1,7 +1,8 @@
 import React from "react";
+import ChooseSize from "../../components/ChooseSize/ChooseSize";
 
 const ProductDetail = () => {
-  return <h1>DETALHE DO PRODUTO</h1>;
+  return <ChooseSize />;
 };
 
 export default ProductDetail;
