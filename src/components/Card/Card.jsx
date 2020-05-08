@@ -1,8 +1,10 @@
-import React from 'react';
+import React from "react";
 
-import './Card.scss';
+import "./Card.scss";
 
-import imgDefault from '../../assets/images/img-default.jpeg';
+import ProductName from "../ProductName/ProductName";
+import ProductPrice from "../ProductPrice/ProductPrice";
+import imgDefault from "../../assets/images/img-default.jpeg";
 
 const Card = () => {
   return (
@@ -13,9 +15,9 @@ const Card = () => {
       </figure>
 
       <div className="card__description">
-        <h3 className="card__title">Vestido Transpasse Bow</h3>
+        <ProductName text="Vestido Transpasse Bow" />
         <span className="card__price-old">R$ 299,00</span>
-        <span className="card__price">R$ 199,00</span>
+        <ProductPrice />
       </div>
     </div>
   );

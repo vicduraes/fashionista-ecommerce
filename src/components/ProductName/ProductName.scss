@@ -1,0 +1,14 @@
+@import "../../assets/stylesheets/_variables.scss";
+
+.product-title {
+  color: $color-black;
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 12px;
+  text-transform: uppercase;
+
+  @media only screen and (min-width: 768px) {
+    font-size: 14px;
+    line-height: 17px;
+  }
+}

@@ -1,4 +1,4 @@
-@import '../../assets/stylesheets/_variables.scss';
+@import "../../assets/stylesheets/_variables.scss";
 
 .card {
   margin: 0 10px 20px;
@@ -37,14 +37,6 @@
     text-align: center;
   }
 
-  &__title {
-    color: $color-black;
-    font-weight: 500;
-    font-size: 10px;
-    line-height: 12px;
-    text-transform: uppercase;
-  }
-
   &__price {
     font-weight: 600;
     font-size: 14px;
@@ -68,11 +60,6 @@
       img {
         max-width: 265px;
       }
-    }
-
-    &__title {
-      font-size: 14px;
-      line-height: 17px;
     }
   }
 }
