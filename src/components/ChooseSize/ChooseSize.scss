@@ -1,0 +1,57 @@
+@import "../../assets/stylesheets/_variables.scss";
+
+.field-choose-size {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 78vw;
+  color: $color-gray-dark;
+  font-size: $font-size-16;
+
+  &__button {
+    display: flex;
+    width: 30vw;
+    justify-content: space-around;
+  }
+
+  &__size-button {
+    border-radius: 50%;
+    font-size: $font-size-20;
+    background-color: $color-gray-bkg;
+    border: 2px solid $color-primary;
+
+    &--click {
+      background: $color-primary;
+      color: $color-white;
+    }
+  }
+}
+
+
+@media(min-width:768px){
+  .field-choose-size{
+    width: 45vw;
+    &__button {    
+      width: 18vw;    
+  }
+  }
+}
+
+@media(min-width:1024px){
+  .field-choose-size{
+    width: 33vw;
+    &__button {    
+      width: 14vw;    
+  }
+  }
+}
+
+
+
+
+  
+
+  
+  
+  
+

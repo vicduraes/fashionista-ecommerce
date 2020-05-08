@@ -1,7 +1,13 @@
 import React from "react";
+import ChooseSize from "../../components/ChooseSize/ChooseSize";
+import AddPack from "../../components/AddPack/AddPack";
 
 const ProductDetail = () => {
-  return <h1>DETALHE DO PRODUTO</h1>;
-};
-
-export default ProductDetail;
+  return (<>
+    <ChooseSize />
+    <AddPack/></>) 
+    
+  };
+  
+  export default ProductDetail;
+  
