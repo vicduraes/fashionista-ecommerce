@@ -26,3 +26,32 @@
     }
   }
 }
+
+
+@media(min-width:768px){
+  .field-choose-size{
+    width: 45vw;
+    &__button {    
+      width: 18vw;    
+  }
+  }
+}
+
+@media(min-width:1024px){
+  .field-choose-size{
+    width: 33vw;
+    &__button {    
+      width: 14vw;    
+  }
+  }
+}
+
+
+
+
+  
+
+  
+  
+  
+
