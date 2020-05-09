@@ -3,12 +3,32 @@
 .product-title {
   color: $color-black;
   font-weight: 500;
-  font-size: 10px;
   line-height: 12px;
   text-transform: uppercase;
 
-  @media only screen and (min-width: 768px) {
-    font-size: 14px;
-    line-height: 17px;
+  &--small {
+    font-size: $font-size-10;
+  }
+
+  &--medium {
+    font-size: $font-size-18;
+  }
+
+  &--large {
+    font-size: $font-size-20;
+  }
+
+  @media only screen and (min-width: $breakpoint-desktop) {
+    &--small {
+      font-size: $font-size-14;
+    }
+
+    &--medium {
+      font-size: $font-size-16;
+    }
+
+    &--large {
+      font-size: $font-size-24;
+    }
   }
 }
