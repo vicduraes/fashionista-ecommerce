@@ -7,3 +7,10 @@ body {
   font-family: $font-family;
   font-size: 14px;
 }
+
+// classes globais
+.container {
+  width: 92%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
