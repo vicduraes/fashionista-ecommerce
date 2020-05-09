@@ -15,7 +15,7 @@ const Card = () => {
       </figure>
 
       <div className="card__description">
-        <ProductName text="Vestido Transpasse Bow" />
+        <ProductName text="Vestido Transpasse Bow" size="small" />
         <span className="card__price-old">R$ 299,00</span>
         <ProductPrice price="199,00" size="small" />
       </div>
