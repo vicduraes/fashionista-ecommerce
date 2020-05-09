@@ -5,7 +5,7 @@ import "./ProductInstallment.scss";
 const ProductInstallment = ({ quantity, value }) => {
   return (
     <>
-      <span className="product__installment">
+      <span className="product-installment">
         em até {quantity}x R${value}
       </span>
     </>
