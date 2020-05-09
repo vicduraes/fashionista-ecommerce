@@ -17,7 +17,7 @@ const Card = () => {
       <div className="card__description">
         <ProductName text="Vestido Transpasse Bow" />
         <span className="card__price-old">R$ 299,00</span>
-        <ProductPrice />
+        <ProductPrice price="199,00" size="small" />
       </div>
     </div>
   );
