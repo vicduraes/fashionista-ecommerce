@@ -3,35 +3,22 @@
 .shopping-cart {
   position: relative;
   cursor: pointer;
-  display: flex;
   border: none;
-  vertical-align: middle;
-  align-content: space-around;
-
-  background: $color-white;
-
-  text-align: center;
+  background: transparent;
   font-size: $font-size-20;
 
   &--badge:after {
     position: absolute;
-    top: -35%;
-    right: -15%;
-
+    top: -10%;
+    right: -10%;
     width: 1.125rem;
-    height: 1.125rem;
-    line-height: 1.125rem;
     border: 1px solid $color-primary;
     border-radius: 50%;
-
     background: $color-primary;
     color: $color-white;
-
-    font-family: sans-serif;
-    text-align: center;
     font-size: $font-size-12;
-    font-weight: bold;
-
+    font-weight: 600;
+    font-style: normal;
     content: attr(data-count);
   }
 }
