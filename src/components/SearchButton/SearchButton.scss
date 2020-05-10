@@ -1,0 +1,9 @@
+@import "../../assets/stylesheets/_variables.scss";
+
+.search-button {
+    border: none;
+    background: transparent;
+    color: $color-black;
+    font-size: $font-size-20;
+    cursor: pointer;
+}
