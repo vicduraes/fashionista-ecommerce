@@ -4,38 +4,27 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 20px 0;
   width: 90%;
-  margin: 0 auto;
+  margin: 18px auto 0 auto;
 
-  span {
+  &__span {
     height: 1px;
-    width: 50%;
-
+    width: 40%;
     background-color: $color-gray-light;
   }
 
-  p {
+  &__itens {
     padding: 0 30px;
-    width: 8%;
+    width: 15%;
     text-align: center;
     font-weight: 600;
-
     color: $color-gray-dark;
   }
 }
 
-@media (max-width: 768px) {
+@media only screen and (min-width: 768px) {
   .itens-count {
-    p {
-      width: 10%;
-    }
-  }
-}
-
-@media (max-width: 411px) {
-  .itens-count {
-    p {
-      width: 40%;
-    }
+    margin-top: 0;
   }
 }
