@@ -8,6 +8,8 @@ import AddPack from "../AddPack/AddPack";
 import ProductName from "../ProductName/ProductName";
 import ProductPrice from "../ProductPrice/ProductPrice";
 import ProductInstallment from "../ProductInstallment/ProductInstallment";
+import BackToCatalog from "../BackToCatalog/BackToCatalog";
+
 
 import imgDefault from "../../assets/images/img-default.svg";
 
@@ -27,6 +29,7 @@ const Detail = () => {
           </div>
           <ChooseSize />
           <AddPack />
+          <BackToCatalog/>
         </div>
       </div>
     </>
