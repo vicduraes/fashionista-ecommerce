@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import "./ProductPrice.scss";
 
 const ProductPrice = ({ price, size }) => {
-  const className = `product-price--${size}`;
+  const className = `product-price product-price--${size}`;
   return (
     <span className={className}>
       R$

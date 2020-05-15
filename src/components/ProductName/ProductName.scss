@@ -3,7 +3,7 @@
 .product-title {
   color: $color-black;
   font-weight: 500;
-  line-height: 12px;
+  margin: 0 0 5px;
   text-transform: uppercase;
 
   &--small {
@@ -16,6 +16,7 @@
 
   &--large {
     font-size: $font-size-20;
+    font-weight: 600;
   }
 
   @media only screen and (min-width: $breakpoint-desktop) {
@@ -29,6 +30,7 @@
 
     &--large {
       font-size: $font-size-24;
+      font-weight: 600;
     }
   }
 }
