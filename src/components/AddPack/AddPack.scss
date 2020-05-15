@@ -1,17 +1,18 @@
 @import "../../assets/stylesheets/_variables.scss";
 
-.add-pack{   
-    
-    &__button{
-        border-radius: 50px;
-        width:261px;
-        height: 56px;
-        text-transform: uppercase;
-        font-size:$font-size-16 ;
-        
-        border: none;
-        background-color: $color-primary;
-        color: $color-white;
-        
-    }
+.add-pack {
+  display: flex;
+  justify-content: center;
+
+  &__button {
+    border-radius: 50px;
+    width: 261px;
+    height: 56px;
+    text-transform: uppercase;
+    font-size: $font-size-16;
+
+    border: none;
+    background-color: $color-primary;
+    color: $color-white;
+  }
 }

@@ -1,10 +1,16 @@
 import React from "react";
+import Navbar from "../../components/Navbar/Navbar";
 import Detail from "../../components/Detail/Detail";
 
-import "./ProductDetail.scss";
-
 const ProductDetail = () => {
-  return <Detail />
+  return (
+    <div className="product-detail">
+      <>
+        <Navbar />
+        <Detail />
+      </>
+    </div>
+  );
 };
 
 export default ProductDetail;

@@ -1,15 +1,20 @@
 @import "../../assets/stylesheets/_variables.scss";
 
 .back-to-catalog {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 16%;
-    color: $color-primary;
-    font-size: $font-size-14;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 5px 0;
+  color: $color-primary;
+  font-size: $font-size-14;
 
-    &__text {
-        font-weight: 600;
-        text-transform: uppercase;
-    }
+  &__icon {
+    margin-right: 25px;
+  }
+
+  &__text {
+    font-weight: 600;
+    text-transform: uppercase;
+    margin: 0;
+  }
 }
