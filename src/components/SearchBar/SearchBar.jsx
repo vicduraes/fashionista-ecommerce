@@ -2,7 +2,7 @@ import React from "react";
 
 import SearchButton from "../SearchButton/SearchButton";
 
-import "./Search.scss";
+import "./SearchBar.scss";
 
 const SearchBar = () => {
   return (

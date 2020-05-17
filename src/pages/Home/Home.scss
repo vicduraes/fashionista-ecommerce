@@ -1,5 +1,3 @@
-@import "../../assets/stylesheets/_placeholders.scss";
-
 .product-catalog {
   display: flex;
   flex-wrap: wrap;
@@ -7,6 +5,8 @@
 }
 
 .container {
-  @extend %container;
+  width: 92%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
