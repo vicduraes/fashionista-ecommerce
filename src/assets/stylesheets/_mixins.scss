@@ -4,9 +4,3 @@
     align-items: $align-items;
     justify-content: $justify-content;
 }
-
-@mixin container-box {
-    width: 92%;
-    max-width: 1200px;
-    margin: 0 auto;
-}

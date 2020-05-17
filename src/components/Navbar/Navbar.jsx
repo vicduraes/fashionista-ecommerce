@@ -1,7 +1,7 @@
 import React from "react";
 
 import ShoppingCart from "../ShoppingCart/ShoppingCart.jsx";
-import Search from "../SearchBar/Search";
+import Search from "../SearchBar/SearchBar";
 import BackArrowIcon from "../BackArrowIcon/BackArrowIcon";
 import SearchButton from "../SearchButton/SearchButton.jsx";
 
