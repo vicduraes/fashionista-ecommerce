@@ -1,3 +1,6 @@
+@import "../../assets/stylesheets/_variables.scss";
+
 .back-arrow {
-  visibility: hidden;
+  color: $color-black;
+  font-size: $font-size-20;
 }
