@@ -1,5 +1,12 @@
-.catalog {
+@import "../../assets/stylesheets/_placeholders.scss";
+
+.product-catalog {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
+
+.container {
+  @extend %container;
+}
+

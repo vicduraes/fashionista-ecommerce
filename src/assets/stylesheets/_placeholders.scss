@@ -1,0 +1,13 @@
+%box-shadow-strong {
+    box-shadow: 0px 4px 40px rgba(48, 47, 47, 0.2);
+}
+
+%box-shadow-soft {
+    box-shadow: 0px 4px 60px rgba(48, 47, 47, 0.2);
+}
+
+%container {
+    width: 92%;
+    max-width: 1200px;
+    margin: 0 auto;
+}

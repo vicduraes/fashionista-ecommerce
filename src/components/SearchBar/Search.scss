@@ -1,0 +1,36 @@
+@import "../../assets/stylesheets/_variables.scss";
+
+.search {
+  width: 100%;
+  background-color: $color-gray-bkg;
+  padding: 2% 0;
+  box-shadow: 0px 19px 35px -10px rgba(48, 47, 47, 0.2);
+
+  .container {
+    width: 82%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__input {
+    width: 80%;
+    border: 1px solid $color-gray-light;
+    padding: 5px 10px;
+    margin-right: 2%;
+    height: 30px;
+    border-radius: 7px;
+    outline: none;
+    font-size: $font-size-14;
+
+    &:focus {
+      border: 2px solid $color-primary;
+    }
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .search {
+    display: none;
+  }
+}
