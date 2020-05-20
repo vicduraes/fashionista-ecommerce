@@ -1,11 +1,11 @@
-@import '../../assets/stylesheets/_variables.scss';
+@import "../../assets/stylesheets/_variables.scss";
 
 .itens-count {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 20px 0;
-  width: 90%;
+  width: 100%;
   margin: 18px auto 0 auto;
 
   &__span {
