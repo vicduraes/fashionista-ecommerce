@@ -1,12 +1,23 @@
 import React, { useState } from "react";
+import classnames from "classnames";
 
 import "./ChooseSize.scss";
 
 const ChooseSize = () => {
-  const [toggle, setToggle] = useState(false);
+  const [buttonP, setButtonP] = useState(false);
+  const [buttonM, setButtonM] = useState(false);
+  const [buttonG, setButtonG] = useState(false);
 
-  const toggleIt = () => {
-    setToggle(!toggle);
+  const handleClickButtonP = () => {
+    return setButtonP(!buttonP);
+  };
+
+  const handleClickButtonM = () => {
+    return setButtonM(!buttonM);
+  };
+
+  const handleClickButtonG = () => {
+    return setButtonG(!buttonG);
   };
 
   return (
@@ -14,17 +25,29 @@ const ChooseSize = () => {
       <span>Escolha o tamanho:</span>
       <div className="field-choose-size__button">
         <button
-          className={
-            toggle
-              ? " field-choose-size__size-button field-choose-size__size-button--click"
-              : "field-choose-size__size-button"
-          }
-          onClick={toggleIt}
+          className={classnames("field-choose-size__size-button", {
+            "field-choose-size__size-button--click": buttonP,
+          })}
+          onClick={handleClickButtonP}
         >
           P
         </button>
-        <button className="field-choose-size__size-button">M</button>
-        <button className="field-choose-size__size-button">G</button>
+        <button
+          className={classnames("field-choose-size__size-button", {
+            "field-choose-size__size-button--click": buttonM,
+          })}
+          onClick={handleClickButtonM}
+        >
+          M
+        </button>
+        <button
+          className={classnames("field-choose-size__size-button", {
+            "field-choose-size__size-button--click": buttonG,
+          })}
+          onClick={handleClickButtonG}
+        >
+          G
+        </button>
       </div>
     </div>
   );
