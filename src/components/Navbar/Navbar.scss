@@ -2,7 +2,6 @@
 @import "../../assets/stylesheets/_placeholders.scss";
 
 .navbar {
-  height: 14vh;
   background-color: $color-white;
   @extend %box-shadow-strong;
 
@@ -26,10 +25,8 @@
   }
 }
 
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: $breakpoint-desktop) {
   .navbar {
-    height: 10vh;
-
     &__arrow-button {
       display: none;
     }
