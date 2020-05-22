@@ -22,7 +22,7 @@ const Detail = () => {
             <ProductName text="Vestido Transpasse Bow" size="large" />
             <div className="detail__prices">
               <ProductPrice price="199,90" size="medium" />
-              <ProductInstallment quantity="3" value="68,90" />
+              <ProductInstallment text="3 x 68,90" />
             </div>
             <ChooseSize />
             <AddPack />
