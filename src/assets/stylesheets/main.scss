@@ -4,13 +4,20 @@
 @import "./mixins";
 @import "./placeholders";
 
-body {
-  margin: 0;
+html {
   font-family: $font-family;
   font-size: 14px;
-
-  button, input {
-    font-family: $font-family;
-  }
 }
 
+body {
+  margin: 0;
+
+  button,
+  input {
+    font-family: $font-family;
+  }
+
+  figure {
+    margin: 0;
+  }
+}

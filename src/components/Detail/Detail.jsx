@@ -2,6 +2,7 @@ import React from "react";
 
 import "./Detail.scss";
 
+import ProductImg from "../ProductImg/ProductImg";
 import ChooseSize from "../ChooseSize/ChooseSize";
 import AddPack from "../AddPack/AddPack";
 import ProductName from "../ProductName/ProductName";
@@ -15,15 +16,13 @@ const Detail = () => {
   return (
     <>
       <div className="detail">
-        <figure className="detail__img">
-          <img src={imgDefault} alt="vestido transpasse" />
-        </figure>
+        <ProductImg src={imgDefault} imgDesciption="Vestido Transpasse Bow" />
         <div className="detail__info">
           <div className="detail__box">
             <ProductName text="Vestido Transpasse Bow" size="large" />
             <div className="detail__prices">
               <ProductPrice price="199,90" size="medium" />
-              <ProductInstallment quantity="3" value="68,90" />
+              <ProductInstallment text="3 x 68,90" />
             </div>
             <ChooseSize />
             <AddPack />
