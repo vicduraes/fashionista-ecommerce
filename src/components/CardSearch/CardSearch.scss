@@ -1,0 +1,37 @@
+@import "../../assets/stylesheets/_variables.scss";
+
+.card-search {
+  padding: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  text-align: center;
+  width: 100%;
+  border-bottom: 1px solid $color-gray-light;
+
+  &__img {
+    position: relative;
+    width: 8.375em;
+
+    img {
+      height: auto;
+      width: 100%;
+    }
+  }
+
+  &__description {
+    padding-top: 1rem;
+    text-align: left;
+    word-break: break-word;
+    width: 7.5%;
+  }
+  
+  &__prices {
+    padding-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: right;
+  }
+}
