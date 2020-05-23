@@ -6,12 +6,14 @@
   background-color: $color-gray-bkg;
   padding: 20px;
   color: $color-black;
+  z-index: 1;
 }
 
 .overlay {
   display: flex;
   justify-content: flex-end;
   position: fixed;
+  z-index: 1;
   top: 0;
   left: 0;
   width: 100%;
