@@ -2,6 +2,7 @@ import React from "react";
 
 import "./Card.scss";
 
+import ProductImg from "../ProductImg/ProductImg";
 import ProductName from "../ProductName/ProductName";
 import ProductPrice from "../ProductPrice/ProductPrice";
 import imgDefault from "../../assets/images/img-default.jpeg";
@@ -9,10 +10,10 @@ import imgDefault from "../../assets/images/img-default.jpeg";
 const Card = () => {
   return (
     <div className="card">
-      <figure className="card__img">
-        <img src={imgDefault} alt="vestido transpasse" />
+      <div className="card__img">
+        <ProductImg src={imgDefault} imgDesciption="Vestido Transpasse Bow" />
         <span className="card__discount"> - 23%</span>
-      </figure>
+      </div>
 
       <div className="card__description">
         <ProductName text="Vestido Transpasse Bow" size="small" />
