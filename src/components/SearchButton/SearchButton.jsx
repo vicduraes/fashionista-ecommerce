@@ -1,23 +1,19 @@
-import React, { useState, useRef } from "react";
+import React from "react";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
-import Modal from "../Modal/Modal";
+
 
 import "./SearchButton.scss";
 
-const SearchButton = () => {
-  const [show, setShow] = useState(false);
-
-  const openModal = () => setShow(true);
-  const closeModal = () => setShow(false);
-
+const SearchButton = (props) => {
+  const{handleClick} = props;
   return (
     <>
-      <button className="search-button" onClick={openModal}>
+      <button className="search-button" onClick={handleClick}>
         <FontAwesomeIcon icon={faSearch} />
       </button>
-      <Modal closeModal={closeModal} show={show} />
+     
     </>
   );
 };
