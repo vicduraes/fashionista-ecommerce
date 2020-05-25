@@ -16,11 +16,13 @@ const CardSearch = () => {
           <ProductImg src={imgDefault} imgDesciption="Vestido Transpasse Bow" />
         </div>
         <div className="card-search__description">
-          <ProductName text="Vestido Transpasse Bow" size="medium" />
-        </div>
-        <div className="card-search__prices">
-          <ProductPrice price="199,00" size="medium" />
-          <ProductInstallment text="3x R$53,90" />
+          <span className="card-search__product-name">
+            <ProductName text="Vestido Transpasse Bow" size="medium" />
+          </span>
+          <div className="card-search__prices">
+            <ProductPrice price="199,00" size="medium" />
+            <ProductInstallment text="3x R$53,90" />
+          </div>
         </div>
       </div>
     </>
