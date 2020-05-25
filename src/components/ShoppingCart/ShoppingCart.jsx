@@ -5,9 +5,10 @@ import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 
 import "./ShoppingCart.scss";
 
-const ShoppingCart = () => {
+const ShoppingCart = (props) => {
+  const {handleClick} = props;
   return (
-    <button className="shopping-cart">
+    <button className="shopping-cart" onClick={handleClick}>
       <FontAwesomeIcon icon={faShoppingCart}/>
       <i data-count="2" className="shopping-cart--badge"></i>
     </button>
