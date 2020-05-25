@@ -3,6 +3,7 @@ import React from "react";
 import Navbar from "../../components/Navbar/Navbar";
 import CardSearch from "../../components/CardSearch/CardSearch";
 import NavbarSecondary from "../../components/NavbarSecondary/NavbarSecondary";
+import Subtotal from "../../components/Subtotal/Subtotal";
 
 const Search = () => {
   return (
@@ -10,6 +11,7 @@ const Search = () => {
       <>
         <NavbarSecondary total="2"/>
         <CardSearch />
+        <Subtotal value="R$ 480,00"/>
       </>
     </div>
   );
