@@ -3,13 +3,37 @@
 .navbar-secondary {
     width: 100%;
     height: 67.29px;
-    background-color: $color-white;
+    background-color: $color-gray-bkg;
     display: flex;
     justify-content: space-around;
     align-items: center;
 
+    .back-arrow {
+        display: none;
+    }
+
     &__total {
         font-size: $font-size-18;
         font-weight: 600;
+        text-align: center;
+    }
+
+    &__empty {
+        display: none;
+    }
+
+    @media only screen and (min-width: $breakpoint-desktop) {
+        
+        .navbar-secondary {
+            background-color: $color-white;
+        }
+        
+        .back-arrow {
+            display: inline-block;
+        }
+        
+        &__empty {
+            display: inline-block;
+        }
     }
 }

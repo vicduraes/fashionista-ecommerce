@@ -8,7 +8,7 @@ const NavbarSecondary = (props) => {
         <div className="navbar-secondary">
             <BackArrowIcon />
             <p className="navbar-secondary__total">Sacola ({props.total})</p>
-            <div></div>
+            <div className="navbar-secondary__empty"></div>
         </div>
     );
 }
