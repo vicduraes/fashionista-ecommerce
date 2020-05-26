@@ -1,6 +1,6 @@
 import React from "react";
 
-import Navbar from "../../components/Navbar/Navbar";
+
 import CardSearch from "../../components/CardSearch/CardSearch";
 import NavbarSecondary from "../../components/NavbarSecondary/NavbarSecondary";
 import Subtotal from "../../components/Subtotal/Subtotal";
