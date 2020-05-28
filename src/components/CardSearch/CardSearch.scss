@@ -1,10 +1,10 @@
 @import "../../assets/stylesheets/_variables.scss";
 
 .card-search {
-  padding: 1vh;
+  padding: 15px 0;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
   align-items: flex-start;
   width: 100%;
   border-bottom: 1px solid $color-gray-light;
@@ -15,6 +15,7 @@
   &__img {
     position: relative;
     width: 14vh;
+    margin-right: 22px;
 
     img {
       height: auto;
@@ -23,8 +24,6 @@
   }
 
   &__description {
-    padding: 1vh 0 0 3vh;
-    width: 50%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -33,12 +32,10 @@
   }
 
   &__product-name {
-    width: 30vh;
     flex-wrap: wrap;
   }
 
   &__prices {
-    padding-top: 1vh;
     display: flex;
     flex-direction: column;
     justify-content: center;

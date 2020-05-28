@@ -12,17 +12,18 @@ const CardSearch = () => {
   return (
     <>
       <div className="card-search">
-        <div className="card-search__img">
-          <ProductImg src={imgDefault} imgDesciption="Vestido Transpasse Bow" />
-        </div>
         <div className="card-search__description">
-          <span className="card-search__product-name">
-            <ProductName text="Vestido Transpasse Bow" size="medium" />
-          </span>
-          <div className="card-search__prices">
-            <ProductPrice price="199,00" size="medium" />
-            <ProductInstallment text="3x R$53,90" />
+          <div className="card-search__img">
+            <ProductImg
+              src={imgDefault}
+              imgDesciption="Vestido Transpasse Bow"
+            />
           </div>
+          <ProductName text="Vestido Transpasse Bow" size="medium" />
+        </div>
+        <div className="card-search__prices">
+          <ProductPrice price="199,00" size="medium" />
+          <ProductInstallment text="3x R$53,90" />
         </div>
       </div>
     </>
