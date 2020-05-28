@@ -5,11 +5,12 @@ import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 
 import "./BackArrowIcon.scss";
 
-const BackArrowIcon = () => {
+const BackArrowIcon = (props) => {
+  const { closeFunction } = props;
   return (
-    <div className="back-arrow">
+    <button className="back-arrow" onClick={closeFunction}>
       <FontAwesomeIcon icon={faArrowLeft} />
-    </div>
+    </button>
   );
 };
 
