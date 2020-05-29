@@ -1,10 +1,10 @@
 @import "../../assets/stylesheets/_variables.scss";
 
 .card-shop {
-  padding: 1vh;
+  padding: 15px 0;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
   align-items: flex-start;
   width: 100%;
   border-bottom: 1px solid $color-gray-light;
@@ -14,6 +14,7 @@
   &__img {
     position: relative;
     width: 14vh;
+    margin-right: 22px;
 
     img {
       height: auto;
@@ -22,8 +23,6 @@
   }
 
   &__description {
-    padding: 1vh 0 0 3vh;
-    width: 50%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -31,13 +30,50 @@
     text-align: left;
   }
 
+  &__btn-delete {
+    width: 100%;
+    margin: 5px 0;
+    border: none;
+    color: $color-primary;
+    background-color: transparent;
+    text-align: center;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
   &__product-name {
-    width: 30vh;
     flex-wrap: wrap;
   }
 
+  &__size {
+    display: block;
+    margin-bottom: 20px;
+    font-size: $font-size-16;
+    color: $color-gray-dark;
+  }
+
+  &__quantity-btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 25px;
+    padding: 0;
+    height: 25px;
+  }
+
+  &__quantity-icon {
+    color: $color-primary;
+    font-size: $font-size-20;
+  }
+
+  &__quantity-number {
+    color: $color-black;
+    font-size: $font-size-18;
+    margin: 0 10px;
+  }
+
   &__prices {
-    padding-top: 1vh;
     display: flex;
     flex-direction: column;
     justify-content: center;

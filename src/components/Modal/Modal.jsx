@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import BackArrowIcon from "../BackArrowIcon/BackArrowIcon";
 import SearchBar from "../SearchBar/SearchBar";
 import CardSearch from "../CardSearch/CardSearch";
+import CardShop from "../CardShop/CardShop";
 import ItensCount from "../ItensCount/ItensCount";
 import "./Modal.scss";
 
@@ -17,11 +18,8 @@ const Modal = (props) => {
           <ItensCount totalCount="2" />
           <CardSearch />
           <CardSearch />
-          <CardSearch />
-          <CardSearch />
-          <CardSearch />
-          <CardSearch />
-          <CardSearch />
+          <CardShop />
+          <CardShop />
         </div>
       </div>
     </>
