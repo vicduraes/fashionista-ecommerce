@@ -2,7 +2,9 @@ import React from "react";
 import PropTypes from "prop-types";
 import "./ProductInstallment.scss";
 
-const ProductInstallment = ({ text }) => {
+const ProductInstallment = (props) => {
+  const { text } = props;
+
   return <span className="product-installment">{text}</span>;
 };
 

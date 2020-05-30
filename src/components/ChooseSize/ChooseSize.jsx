@@ -8,34 +8,31 @@ const ChooseSize = () => {
   const [buttonM, setButtonM] = useState(false);
   const [buttonG, setButtonG] = useState(false);
 
+  const clearButton = () => {
+    return setButtonP(false) + setButtonM(false) + setButtonG(false);
+  };
 
   const handleClickButtonP = () => {
-    clearButton()
+    clearButton();
     return setButtonP(!buttonP);
   };
 
   const handleClickButtonM = () => {
-    clearButton()
+    clearButton();
     return setButtonM(!buttonM);
   };
 
   const handleClickButtonG = () => {
-    clearButton()
+    clearButton();
     return setButtonG(!buttonG);
   };
-
-  const clearButton = () => {
-    return (setButtonP(false),
-     setButtonM(false),
-      setButtonG(false)
-    )
-  }
 
   return (
     <div className="field-choose-size">
       <span>Escolha o tamanho:</span>
       <div className="field-choose-size__button">
         <button
+          type="button"
           className={classnames("field-choose-size__size-button", {
             "field-choose-size__size-button--click": buttonP,
           })}
@@ -44,6 +41,7 @@ const ChooseSize = () => {
           P
         </button>
         <button
+          type="button"
           className={classnames("field-choose-size__size-button", {
             "field-choose-size__size-button--click": buttonM,
           })}
@@ -52,6 +50,7 @@ const ChooseSize = () => {
           M
         </button>
         <button
+          type="button"
           className={classnames("field-choose-size__size-button", {
             "field-choose-size__size-button--click": buttonG,
           })}

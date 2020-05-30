@@ -9,23 +9,23 @@ import "./Home.scss";
 
 const Home = () => {
   return (
-      <>
-        <Navbar />
-        <div className="container">
-          <ItensCount totalCount="22" />
-          <ScrollToTop />
-          <div className="product-catalog">
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-          </div>
+    <>
+      <Navbar />
+      <div className="container">
+        <ItensCount totalCount="22" />
+        <ScrollToTop />
+        <div className="product-catalog">
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
         </div>
-      </>
+      </div>
+    </>
   );
 };
 

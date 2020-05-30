@@ -3,7 +3,8 @@ import PropTypes from "prop-types";
 
 import "./ItensCount.scss";
 
-const ItensCount = ({ totalCount }) => {
+const ItensCount = (props) => {
+  const { totalCount } = props;
   const text = `${totalCount} Itens`;
 
   return (

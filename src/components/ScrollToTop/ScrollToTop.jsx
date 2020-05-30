@@ -1,5 +1,5 @@
-import React, { useRef, useEffect, useState } from 'react';
-import './ScrollToTop.scss';
+import React, { useRef, useEffect, useState } from "react";
+import "./ScrollToTop.scss";
 
 const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetBottom);
 
@@ -12,9 +12,9 @@ const useHideOnScrolled = () => {
   };
 
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
@@ -39,7 +39,12 @@ const ScrollToTop = () => {
   );
 
   return isHidden ? (
-    <button className="scroll-to-top" ref={myRef} onClick={executeScroll}>
+    <button
+      type="button"
+      className="scroll-to-top"
+      ref={myRef}
+      onClick={executeScroll}
+    >
       {arrowUpIcon}
     </button>
   ) : null;
