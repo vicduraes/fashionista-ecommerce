@@ -13,8 +13,8 @@ const SearchBar = () => {
             type="text"
             placeholder="O que você procura?"
             className="search__input"
-          ></input>
-          <SearchButton/>
+          />
+          <SearchButton />
         </div>
       </div>
     </>

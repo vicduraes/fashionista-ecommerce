@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 import ShoppingCart from "../ShoppingCart/ShoppingCart";
@@ -16,6 +16,7 @@ const Navbar = () => {
 
   const openModal = () => setShow(true);
   const closeModal = () => setShow(false);
+
   return (
     <>
       <nav className="navbar">
@@ -34,10 +35,10 @@ const Navbar = () => {
           </figure>
           <div className="navbar__elements--desktop">
             <span className="navbar__search-button">
-              <SearchButton handleClick= {openModal}/>
+              <SearchButton handleClick={openModal} />
               <Modal closeModal={closeModal} show={show} />
             </span>
-            <ShoppingCart handleClick = {openModal} />
+            <ShoppingCart handleClick={openModal} />
             <Modal closeModal={closeModal} show={show} />
           </div>
         </div>

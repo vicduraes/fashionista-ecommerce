@@ -3,7 +3,9 @@ import PropTypes from "prop-types";
 
 import "./ProductImg.scss";
 
-const ProductImg = ({ src, imgDesciption }) => {
+const ProductImg = (props) => {
+  const { src, imgDesciption } = props;
+
   return (
     <figure className="product-img">
       <img src={src} alt={imgDesciption} />

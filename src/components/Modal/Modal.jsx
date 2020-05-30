@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import PropTypes from "prop-types";
 import BackArrowIcon from "../BackArrowIcon/BackArrowIcon";
 import SearchBar from "../SearchBar/SearchBar";
 import CardSearch from "../CardSearch/CardSearch";
@@ -29,6 +30,15 @@ const Modal = (props) => {
     modalComponent,
     document.getElementById("modal-root")
   );
+};
+
+Modal.defaultProps = {
+  size: "medium",
+};
+
+Modal.propTypes = {
+  show: PropTypes.func.isRequired,
+  closeModal: PropTypes.func.isRequired,
 };
 
 export default Modal;

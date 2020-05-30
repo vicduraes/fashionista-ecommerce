@@ -2,10 +2,11 @@ import React from "react";
 import PropTypes from "prop-types";
 import "./ProductPrice.scss";
 
-const ProductPrice = ({ price, size }) => {
-  const className = `product-price product-price--${size}`;
+const ProductPrice = (props) => {
+  const { price, size } = props;
+  const productClass = `product-price product-price--${size}`;
   return (
-    <span className={className}>
+    <span className={productClass}>
       R$
       {price}
     </span>

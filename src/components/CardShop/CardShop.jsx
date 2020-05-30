@@ -17,7 +17,9 @@ const CardShop = () => {
         <div className="card-shop__description">
           <div className="card-shop__img">
             <ProductImg src={imgDefault} imgDesciption="calça classic print" />
-            <button className="card-shop__btn-delete">Remover item</button>
+            <button type="button" className="card-shop__btn-delete">
+              Remover item
+            </button>
           </div>
           <div className="card-shop__infos">
             <span className="card-shop__product-name">
@@ -25,14 +27,14 @@ const CardShop = () => {
             </span>
             <span className="card-shop__size"> Tam. 40</span>
             <div className="card-shop__quantity">
-              <button className="card-shop__quantity-btn">
+              <button type="button" className="card-shop__quantity-btn">
                 <FontAwesomeIcon
                   className="card-shop__quantity-icon"
                   icon={faMinusCircle}
                 />
               </button>
               <span className="card-shop__quantity-number"> 1 </span>
-              <button className="card-shop__quantity-btn">
+              <button type="button" className="card-shop__quantity-btn">
                 <FontAwesomeIcon
                   className="card-shop__quantity-icon"
                   icon={faPlusCircle}

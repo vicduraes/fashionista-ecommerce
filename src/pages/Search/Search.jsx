@@ -11,6 +11,7 @@ const Search = () => {
       <>
         <NavbarSecondary total="2" />
         <CardShop />
+        <CardSearch />
         <Subtotal value="R$ 480,00" />
       </>
     </div>
