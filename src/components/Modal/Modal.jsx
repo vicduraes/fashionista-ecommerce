@@ -1,9 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import PropTypes from "prop-types";
-import BackArrowIcon from "../BackArrowIcon/BackArrowIcon";
+// import BackArrowIcon from "../BackArrowIcon/BackArrowIcon";
 import SearchBar from "../SearchBar/SearchBar";
+import Subtotal from "../Subtotal/Subtotal";
 import CardSearch from "../CardSearch/CardSearch";
+import NavbarSecondary from "../NavbarSecondary/NavbarSecondary";
 import CardShop from "../CardShop/CardShop";
 import ItensCount from "../ItensCount/ItensCount";
 import "./Modal.scss";
@@ -14,13 +16,18 @@ const Modal = (props) => {
     <>
       <div className={show ? "overlay" : "hide"}>
         <div className={show ? "modal" : "hide"}>
-          <BackArrowIcon closeFunction={closeModal} />
-          <SearchBar />
-          <ItensCount totalCount="2" />
-          <CardSearch />
-          <CardSearch />
-          <CardShop />
-          <CardShop />
+          <NavbarSecondary total="3" closeFunction={closeModal}/>
+          <SearchBar/>
+          <div className="cards-box">
+            <ItensCount totalCount="2" />
+            <CardSearch />
+            <CardSearch />
+            <CardSearch />
+            <CardShop />
+            <CardShop />
+            <CardShop />
+          </div>
+          <Subtotal/>
         </div>
       </div>
     </>
