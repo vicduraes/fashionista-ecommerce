@@ -10,7 +10,7 @@ import ProductPrice from "../ProductPrice/ProductPrice";
 import ProductInstallment from "../ProductInstallment/ProductInstallment";
 import BackToCatalog from "../BackToCatalog/BackToCatalog";
 
-import imgDefault from "../../assets/images/img-default.svg";
+import imgDefault from "../../assets/images/img-default.jpg";
 
 const Detail = () => {
   return (
