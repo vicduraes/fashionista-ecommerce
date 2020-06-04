@@ -6,7 +6,7 @@ import ProductImg from "../ProductImg/ProductImg";
 import ProductName from "../ProductName/ProductName";
 import ProductPrice from "../ProductPrice/ProductPrice";
 import ProductInstallment from "../ProductInstallment/ProductInstallment";
-import imgDefault from "../../assets/images/img-default.jpeg";
+import imgDefault from "../../assets/images/img-default.jpg";
 
 const CardSearch = () => {
   return (

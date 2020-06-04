@@ -7,7 +7,6 @@ const ProductPrice = (props) => {
   const productClass = `product-price product-price--${size}`;
   return (
     <span className={productClass}>
-      R$
       {price}
     </span>
   );
