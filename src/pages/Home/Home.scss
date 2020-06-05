@@ -1,3 +1,5 @@
+@import "../../assets/stylesheets/_variables.scss";
+
 .product-catalog {
   display: flex;
   flex-wrap: wrap;
@@ -10,3 +12,16 @@
   margin: 0 auto;
 }
 
+.error-block {
+  margin: 0 auto;
+  padding: 20% 0;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  &__message {
+    font-size: $font-size-42;
+    text-align: center;
+  }
+}
