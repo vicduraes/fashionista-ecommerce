@@ -27,7 +27,7 @@ const Modal = (props) => {
             <CardShop />
             <CardShop />
           </div>
-          <Subtotal/>
+          <Subtotal subtotal="400"/>
         </div>
       </div>
     </>
