@@ -10,32 +10,45 @@ import Card from "../../components/Card/Card";
 import "./Home.scss";
 
 const Home = () => {
-
-  const [ data, setData ] = useState([]);
+  const [data, setData] = useState([]);
 
   useEffect(() => {
-
     const getAPI = async () => {
-      await api.get('/').then(( { data } ) => {
-        setData(data);
-      });
+      try {
+        await api.get("/").then(({ data }) => {
+          setData(data);
+        });
+      } catch (err) {
+        setData([]);
+      }
     };
 
     getAPI();
-    
-  }, [])
+  }, []);
 
-  console.log(data);
+  const hasData = data.length > 0 ? true : false;
 
   return (
     <>
       <Navbar />
       <div className="container">
-        <ItensCount totalCount={data.length} />
-        <ScrollToTop />
-        <div className="product-catalog">
-          {data.map((product) => <Card product={product} />)}
-        </div>
+        {hasData ? (
+          <>
+            <ItensCount totalCount={data.length} />
+            <ScrollToTop />
+            <div className="product-catalog">
+              {data.map((product) => (
+                <Card product={product} />
+              ))}
+            </div>
+          </>
+        ) : (
+          <div className="error-block">
+            <span className="error-block__message">
+              Ooopss! Ocorreu algum erro inesperado. Tente novamente.
+            </span>
+          </div>
+        )}
       </div>
     </>
   );
