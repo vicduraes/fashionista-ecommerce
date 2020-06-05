@@ -44,8 +44,9 @@ const Home = () => {
           </>
         ) : (
           <div className="error-block">
+            <span className="error-block__ops">Ops!</span>
             <span className="error-block__message">
-              Ooopss! Ocorreu algum erro inesperado. Tente novamente.
+               Ocorreu um erro inesperado. Tente novamente.
             </span>
           </div>
         )}
