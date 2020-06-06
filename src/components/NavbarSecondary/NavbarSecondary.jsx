@@ -11,7 +11,7 @@ const NavbarSecondary = (props) => {
   return (
     <div className="navbar-secondary">
       <div className="navbar-secondary__arrow">
-        <BackArrowIcon closeFunction={closeModal}/>
+        <BackArrowIcon closeFunction={closeModal} />
       </div>
       <p className="navbar-secondary__total">{text}</p>
     </div>

@@ -8,7 +8,6 @@ import "./BackArrowIcon.scss";
 
 const BackArrowIcon = (props) => {
   const { closeFunction } = props;
-
   return (
     <button type="button" className="back-arrow" onClick={closeFunction}>
       <FontAwesomeIcon icon={faArrowLeft} />
