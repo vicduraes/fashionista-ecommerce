@@ -12,11 +12,12 @@ import "./Modal.scss";
 
 const Modal = (props) => {
   const { show, closeModal } = props;
+
   const modalComponent = (
     <>
       <div className={show ? "overlay" : "hide"}>
         <div className={show ? "modal" : "hide"}>
-          <NavbarSecondary total="3" closeFunction={closeModal} />
+          <NavbarSecondary total="3" closeModal={closeModal} />
           <SearchBar />
           <div className="cards-box">
             <ItensCount totalCount="2" />
