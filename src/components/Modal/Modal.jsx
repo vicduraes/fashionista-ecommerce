@@ -16,8 +16,8 @@ const Modal = (props) => {
     <>
       <div className={show ? "overlay" : "hide"}>
         <div className={show ? "modal" : "hide"}>
-          <NavbarSecondary total="3" closeFunction={closeModal}/>
-          <SearchBar/>
+          <NavbarSecondary total="3" closeFunction={closeModal} />
+          <SearchBar />
           <div className="cards-box">
             <ItensCount totalCount="2" />
             <CardSearch />
@@ -27,7 +27,7 @@ const Modal = (props) => {
             <CardShop />
             <CardShop />
           </div>
-          <Subtotal/>
+          <Subtotal />
         </div>
       </div>
     </>

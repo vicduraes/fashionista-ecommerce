@@ -14,8 +14,8 @@
 
   &__img {
     position: relative;
-    width: 14vh;
-    margin-right: 22px;
+    width: 30%;
+    margin-right: 15px;
 
     img {
       height: auto;
@@ -28,7 +28,13 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
+    width: 70%;
+    margin-right: 15px;
     text-align: left;
+
+    .product-title {
+      width: 65%;
+    }
   }
 
   &__product-name {
@@ -40,5 +46,9 @@
     flex-direction: column;
     justify-content: center;
     text-align: right;
+  }
+
+  .product-installment {
+    font-size: $font-size-14;
   }
 }
