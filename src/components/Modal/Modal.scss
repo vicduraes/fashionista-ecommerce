@@ -1,21 +1,20 @@
 @import "../../assets/stylesheets/_variables.scss";
 
 .modal {
-  // height: 100vh;
-  width: 40%;
+  height: 100vh;
+  width: 100%;
   background-color: $color-gray-bkg;
-  // padding: 20px;
   color: $color-black;
+  overflow-y: auto;
   z-index: 1;
 }
 
 .overlay {
   display: flex;
   justify-content: flex-end;
-  position: absolute;
-  z-index: 99;
+  position: fixed;
   width: 100%;
-  // height: 100%;
+  z-index: 99;
   background: $color-primary-opacity;
   transition: opacity 0.2s ease;
 }
@@ -30,10 +29,17 @@
 
 .cards-box {
   padding: 0 20px;
+  margin-bottom: 60px;
 }
 
-@media only screen and (max-width: $breakpoint-desktop) {
-  .modal {
-    width: 100%;
+.subtotal {
+  position: fixed;
+  bottom: 0;
+}
+
+@media only screen and (min-width: $breakpoint-desktop) {
+  .modal,
+  .subtotal {
+    width: 40%;
   }
 }
