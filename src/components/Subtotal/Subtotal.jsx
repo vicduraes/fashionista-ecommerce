@@ -4,8 +4,8 @@ import PropTypes from "prop-types";
 import "./Subtotal.scss";
 
 const Subtotal = (props) => {
-  const { value } = props;
-  const text = `Subtotal - ${value}`;
+  const { subtotal } = props;
+  const text = `Subtotal - ${subtotal}`;
 
   return (
     <div className="subtotal">
@@ -15,7 +15,7 @@ const Subtotal = (props) => {
 };
 
 Subtotal.propTypes = {
-  value: PropTypes.number.isRequired,
+  subtotal: PropTypes.string.isRequired,
 };
 
 export default Subtotal;
