@@ -1,4 +1,4 @@
-@import '../../assets/stylesheets/_variables.scss';
+@import "../../assets/stylesheets/_variables.scss";
 
 .scroll-to-top {
   width: 47px;
@@ -12,6 +12,5 @@
   cursor: pointer;
   background-color: $color-primary;
   color: $color-white;
+  z-index: 10;
 }
-
-
