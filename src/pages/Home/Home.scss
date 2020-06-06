@@ -1,9 +1,11 @@
 @import "../../assets/stylesheets/_variables.scss";
 
 .product-catalog {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: auto;
+  grid-gap: 50px 20px;
+  margin-bottom: 50px;
 }
 
 .container {
@@ -27,5 +29,11 @@
     text-transform: uppercase;
     font-weight: 600;
     color: $color-primary;
+  }
+}
+
+@media only screen and (min-width: $breakpoint-tablet) {
+  .product-catalog {
+    grid-template-columns: repeat(4, 1fr);
   }
 }

@@ -1,15 +1,15 @@
 @import "../../assets/stylesheets/_variables.scss";
 
 .card {
-  margin: 0 10px 20px;
   text-align: center;
+  cursor: pointer;
 
   &__img {
     position: relative;
 
     img {
       height: auto;
-      max-width: 170px;
+      width: 100%;
     }
   }
 
@@ -42,16 +42,5 @@
     line-height: 15px;
     color: $color-gray-dark;
     text-decoration-line: line-through;
-  }
-
-  @media only screen and (min-width: 768px) {
-    margin: 0 25px 56px;
-    cursor: pointer;
-
-    &__img {
-      img {
-        max-width: 265px;
-      }
-    }
   }
 }
