@@ -1,6 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { bindActionCreators } from "redux";
 
-import api from "../../service/api";
+import { getCatalog } from "../../store/actions/catalog";
 
 import Navbar from "../../components/Navbar/Navbar";
 import ScrollToTop from "../../components/ScrollToTop/ScrollToTop";
@@ -10,35 +12,26 @@ import Card from "../../components/Card/Card";
 import "./Home.scss";
 
 const Home = () => {
-  const [data, setData] = useState([]);
+  const { loading, catalog } = useSelector((state) => state.catalog);
+
+  const dispatch = useDispatch();
+  const getCatalogAction = bindActionCreators(getCatalog, dispatch);
 
   useEffect(() => {
-    const getAPI = async () => {
-      try {
-        await api.get("/").then(({ data }) => {
-          setData(data);
-        });
-      } catch (err) {
-        setData([]);
-      }
-    };
-
-    getAPI();
+    getCatalogAction();
   }, []);
-
-  const hasData = data.length > 0 ? true : false;
 
   return (
     <>
       <Navbar />
       <div className="container">
-        {hasData ? (
+        {loading ? (
           <>
-            <ItensCount totalCount={data.length} />
+            <ItensCount totalCount={catalog.length} />
             <ScrollToTop />
             <div className="product-catalog">
-              {data.map((product) => (
-                <Card product={product} />
+              {catalog.map((product) => (
+                <Card key={product.style} product={product} />
               ))}
             </div>
           </>
@@ -46,7 +39,7 @@ const Home = () => {
           <div className="error-block">
             <span className="error-block__ops">Ops!</span>
             <span className="error-block__message">
-               Ocorreu um erro inesperado. Tente novamente.
+              Ocorreu um erro inesperado. Tente novamente.
             </span>
           </div>
         )}
