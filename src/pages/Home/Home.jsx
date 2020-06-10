@@ -13,7 +13,6 @@ import "./Home.scss";
 
 const Home = () => {
   const { loading, catalog } = useSelector((state) => state.catalog);
-
   const dispatch = useDispatch();
   const getCatalogAction = bindActionCreators(getCatalog, dispatch);
 
@@ -26,6 +25,8 @@ const Home = () => {
       <Navbar />
       <div className="container">
         {loading ? (
+          <span>Carregando...</span>
+        ) : (
           <>
             <ItensCount totalCount={catalog.length} />
             <ScrollToTop />
@@ -35,14 +36,15 @@ const Home = () => {
               ))}
             </div>
           </>
-        ) : (
-          <div className="error-block">
-            <span className="error-block__ops">Ops!</span>
-            <span className="error-block__message">
-              Ocorreu um erro inesperado. Tente novamente.
-            </span>
-          </div>
         )}
+        {/* // (
+        //   <div className="error-block">
+        //     <span className="error-block__ops">Ops!</span>
+        //     <span className="error-block__message">
+        //       Ocorreu um erro inesperado. Tente novamente.
+        //     </span>
+        //   </div>
+        // ) */}
       </div>
     </>
   );
