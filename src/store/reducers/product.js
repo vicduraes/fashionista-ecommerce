@@ -22,7 +22,7 @@ const productReducer = (state = initialState, action) => {
         ...state,
         loading: false,
         error: null,
-        product: [...state.product, ...action.payload],
+        product: { ...state.product, ...action.payload },
       };
     case GET_PRODUCT_FAILURE:
       return {
