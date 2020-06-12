@@ -6,7 +6,7 @@ import ProductDetail from "./pages/ProductDetail/ProductDetail";
 
 export default () => (
   <Switch>
-    <Route path="/detalhe-produto" component={ProductDetail} />
+    <Route path="/produto/:id" component={ProductDetail} />
     <Route path="*" component={Home} />
   </Switch>
 );
