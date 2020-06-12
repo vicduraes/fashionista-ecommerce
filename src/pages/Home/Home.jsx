@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { bindActionCreators } from "redux";
+import { Link } from "react-router-dom";
 
 import { getCatalog } from "../../store/actions/catalog";
 
@@ -32,7 +33,11 @@ const Home = () => {
             <ScrollToTop />
             <div className="product-catalog">
               {catalog.map((product) => (
-                <Card key={product.style} product={product} />
+                <Link to={{pathname:`/produto/${product.style}`, 
+                state:{id: product.style}}}  
+                style={{ textDecoration: "none" }}>
+                  <Card key={product.style} product={product} />
+                </Link>                
               ))}
             </div>
           </>
