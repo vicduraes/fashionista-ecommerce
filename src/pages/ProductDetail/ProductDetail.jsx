@@ -1,31 +1,24 @@
-import React, {useEffect} from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { bindActionCreators } from "redux";
+import React, { useEffect } from "react";
+import { useSelector, connect } from "react-redux";
 
-import { getProduct } from "../../store/actions/product";
+import { GET_PRODUCT_REQUEST } from "../../store/actions/product";
 
 import Navbar from "../../components/Navbar/Navbar";
 import Detail from "../../components/Detail/Detail";
 
-const ProductDetail = ({location}) => {
-  const { loading, product } = useSelector((state) => state.product);
-  const dispatch = useDispatch();
-  const getProductAction = (id) =>{
-    bindActionCreators(getProduct(id), dispatch);
-  }
-  // const getProductAction = bindActionCreators(
-  //   getProduct,
-  //   dispatch
-  // );
+const ProductDetail = ({ location, getProduct }) => {
+  const { product } = useSelector((state) => state.product);
+
+  console.log(product);
+
+  const getProductAction = () => {
+    getProduct(location.state.id);
+  };
 
   useEffect(() => {
-    console.log(getProductAction);
-    getProductAction(location.state.id);
+    getProductAction();
   }, []);
 
- 
-  
-  console.log(product)
   return (
     <div className="product-detail">
       <>
@@ -36,4 +29,9 @@ const ProductDetail = ({location}) => {
   );
 };
 
-export default ProductDetail;
+const mapStateToProps = (state) => ({});
+const mapDispatchToProps = (dispatch) => ({
+  getProduct: (payload) => dispatch({ type: GET_PRODUCT_REQUEST, payload }),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(ProductDetail);
