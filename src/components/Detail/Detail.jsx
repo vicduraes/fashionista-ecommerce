@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 import "./Detail.scss";
 
@@ -12,17 +13,22 @@ import BackToCatalog from "../BackToCatalog/BackToCatalog";
 
 import imgDefault from "../../assets/images/img-default.jpg";
 
-const Detail = () => {
+const Detail = (props) => {
+  const { product } = props;
+
   return (
     <>
       <div className="detail">
-        <ProductImg src={imgDefault} imgDesciption="Vestido Transpasse Bow" />
+        <ProductImg
+          src={product.image}
+          imgDesciption={product.name}
+        />
         <div className="detail__info">
           <div className="detail__box">
-            <ProductName text="Vestido Transpasse Bow" size="large" />
+            <ProductName text={product.name} size="large" />
             <div className="detail__prices">
-              <ProductPrice price="199,90" size="medium" />
-              <ProductInstallment text="3 x 68,90" />
+              <ProductPrice price={product.actual_price} size="medium" />
+              <ProductInstallment text={product.installments} />
             </div>
             <ChooseSize />
             <AddPack />
@@ -34,6 +40,10 @@ const Detail = () => {
       </div>
     </>
   );
+};
+
+Detail.propTypes = {
+  product: PropTypes.object.isRequired
 };
 
 export default Detail;
