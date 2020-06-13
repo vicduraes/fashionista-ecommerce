@@ -23,7 +23,7 @@ const ProductDetail = ({ location, getProduct }) => {
     <div className="product-detail">
       <>
         <Navbar />
-        <Detail />
+        <Detail product={product} />
       </>
     </div>
   );
