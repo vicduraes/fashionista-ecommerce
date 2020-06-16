@@ -6,15 +6,10 @@ import "./ChooseSize.scss";
 const ChooseSize = (props) => {  
   const { sizes } = props;
   
-  const [button, setButton] = useState(false);
+  const [idButton, setIdButton] = useState('');  
   
-  const clearButton = () => {
-    return setButton(false) 
-  };
-  
-  const handleClickButton = () => {
-    clearButton();
-    return setButton(!button);
+  const handleClickButton = (id) => {    
+    return setIdButton(id);
   };
   
   
@@ -27,12 +22,13 @@ const ChooseSize = (props) => {
           sizes.map(
           (size) =>
             size.available && (
-              <button
+              <button 
+                key={size.sku}
                 type="button"
                 className={classnames("field-choose-size__size-button", {
-                  "field-choose-size__size-button--click": button,
+                  "field-choose-size__size-button--click": idButton === size.sku
                 })}
-                onClick={handleClickButton}
+                onClick={ () => handleClickButton(size.sku)}
                 >
                 {size.size}
               </button> 
