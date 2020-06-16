@@ -30,7 +30,7 @@ const Detail = (props) => {
               <ProductPrice price={product.actual_price} size="medium" />
               <ProductInstallment text={product.installments} />
             </div>
-            <ChooseSize />
+            <ChooseSize sizes={product.sizes} />
             <AddPack />
           </div>
           <div className="detail__box">

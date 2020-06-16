@@ -9,8 +9,6 @@ import Detail from "../../components/Detail/Detail";
 const ProductDetail = ({ location, getProduct }) => {
   const { product } = useSelector((state) => state.product);
 
-  console.log(product);
-
   const getProductAction = () => {
     getProduct(location.state.id);
   };
