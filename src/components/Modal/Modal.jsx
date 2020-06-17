@@ -12,6 +12,19 @@ import "./Modal.scss";
 
 const Modal = (props) => {
   const { show, closeModal } = props;
+  const product = {
+    actual_price: "R$ 199,90",
+    code_color: "20002605_613",
+    color: "TAPEÇARIA",
+    color_slug: "tapecaria",
+    discount_percentage: "",
+    image:
+      "https://viniciusvinna.netlify.app/assets/api-fashionista/20002605_615_catalog_1.jpg",
+    installments: "3x R$ 66,63",
+    name: "VESTIDO TRANSPASSE BOW",
+    on_sale: false,
+    regular_price: "R$ 199,90",
+  };
 
   const modalComponent = (
     <>
@@ -21,12 +34,7 @@ const Modal = (props) => {
           <SearchBar />
           <div className="cards-box">
             <ItensCount totalCount="2" />
-            <CardSearch />
-            <CardSearch />
-            <CardSearch />
-            <CardShop />
-            <CardShop />
-            <CardShop />
+            <CardSearch product={product} />
           </div>
           <Subtotal subtotal="400" />
         </div>
