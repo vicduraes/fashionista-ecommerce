@@ -14,5 +14,10 @@
     border: none;
     background-color: $color-primary;
     color: $color-white;
+
+    &--disabled {
+      background-color: $color-gray-dark;
+      cursor: not-allowed;
+    }
   }
 }

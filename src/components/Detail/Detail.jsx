@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 
 import "./Detail.scss";
@@ -11,18 +11,14 @@ import ProductPrice from "../ProductPrice/ProductPrice";
 import ProductInstallment from "../ProductInstallment/ProductInstallment";
 import BackToCatalog from "../BackToCatalog/BackToCatalog";
 
-import imgDefault from "../../assets/images/img-default.jpg";
-
 const Detail = (props) => {
   const { product } = props;
+  const [selectedSize, setSelectedSize] = useState("");
 
   return (
     <>
       <div className="detail">
-        <ProductImg
-          src={product.image}
-          imgDesciption={product.name}
-        />
+        <ProductImg src={product.image} imgDesciption={product.name} />
         <div className="detail__info">
           <div className="detail__box">
             <ProductName text={product.name} size="large" />
@@ -30,8 +26,11 @@ const Detail = (props) => {
               <ProductPrice price={product.actual_price} size="medium" />
               <ProductInstallment text={product.installments} />
             </div>
-            <ChooseSize sizes={product.sizes} />
-            <AddPack />
+            <ChooseSize
+              sizes={product.sizes}
+              setSelectedSize={setSelectedSize}
+            />
+            <AddPack selectedSize={selectedSize} />
           </div>
           <div className="detail__box">
             <BackToCatalog />
@@ -43,7 +42,7 @@ const Detail = (props) => {
 };
 
 Detail.propTypes = {
-  product: PropTypes.object.isRequired
+  product: PropTypes.object.isRequired,
 };
 
 export default Detail;
