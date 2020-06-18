@@ -18,6 +18,7 @@ const Detail = (props) => {
   return (
     <>
       <div className="detail">
+       
         <ProductImg src={product.image} imgDesciption={product.name} />
         <div className="detail__info">
           <div className="detail__box">
@@ -29,6 +30,7 @@ const Detail = (props) => {
             <ChooseSize
               sizes={product.sizes}
               setSelectedSize={setSelectedSize}
+              
             />
             <AddPack selectedSize={selectedSize} />
           </div>
