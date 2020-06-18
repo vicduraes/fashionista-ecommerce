@@ -33,11 +33,15 @@ const Home = () => {
             <ScrollToTop />
             <div className="product-catalog">
               {catalog.map((product) => (
-                <Link to={{pathname:`/produto/${product.style}`, 
-                state:{id: product.style}}}  
-                style={{ textDecoration: "none" }}>
+                <Link
+                  to={{
+                    pathname: `/produto/${product.style}`,
+                    state: { id: product.style },
+                  }}
+                  style={{ textDecoration: "none" }}
+                >
                   <Card key={product.style} product={product} />
-                </Link>                
+                </Link>
               ))}
             </div>
           </>
