@@ -15,8 +15,9 @@ const SearchBar = () => {
     return catalog.filter((prod) => prod.name.toLowerCase().includes(input));
   };
 
+  const filteredCatalog = onFilterCatalog(catalog, input);
+
   const filteredProducts = () => {
-    const filteredCatalog = onFilterCatalog(catalog, input);
     setProducts(filteredCatalog);
   };
 
@@ -24,8 +25,6 @@ const SearchBar = () => {
     setInput(e.target.value);
     filteredProducts();
   };
-
-  console.log(catalog);
 
   return (
     <>
@@ -37,16 +36,14 @@ const SearchBar = () => {
             className="search__input"
             onChange={handleOnChange}
           />
-          <SearchButton />
+          <SearchButton onClick={handleOnChange} />
         </div>
       </div>
-      <div>
-        <div className="cards-box">
-          <ItensCount totalCount="2" />
-          {productsList.map((prod) => (
-            <CardSearch product={prod} key={prod.style} />
-          ))}
-        </div>
+      <div className="cards-box">
+        <ItensCount totalCount="2" />
+        {productsList.map((prod) => (
+          <CardSearch product={prod} />
+        ))}
       </div>
     </>
   );

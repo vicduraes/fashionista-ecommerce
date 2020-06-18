@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 import ShoppingCart from "../ShoppingCart/ShoppingCart";
-import Search from "../SearchBar/SearchBar";
 import BackArrowIcon from "../BackArrowIcon/BackArrowIcon";
 import SearchButton from "../SearchButton/SearchButton";
 import Modal from "../Modal/Modal";
@@ -42,7 +41,6 @@ const Navbar = () => {
             <Modal closeModal={closeModal} show={show} />
           </div>
         </div>
-        <Search />
       </nav>
     </>
   );

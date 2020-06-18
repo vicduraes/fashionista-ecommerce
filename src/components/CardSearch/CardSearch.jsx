@@ -6,7 +6,6 @@ import ProductImg from "../ProductImg/ProductImg";
 import ProductName from "../ProductName/ProductName";
 import ProductPrice from "../ProductPrice/ProductPrice";
 import ProductInstallment from "../ProductInstallment/ProductInstallment";
-import imgDefault from "../../assets/images/img-default.jpg";
 
 const CardSearch = (props) => {
   const { product } = props;
@@ -27,6 +26,10 @@ const CardSearch = (props) => {
       </div>
     </>
   );
+};
+
+CardSearch.propTypes = {
+  product: PropTypes.object.isRequired,
 };
 
 export default CardSearch;
