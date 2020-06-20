@@ -32,6 +32,7 @@
     text-align: left;
 
     .product-title {
+      font-size: $font-size-14;
       width: 65%;
     }
   }
@@ -90,7 +91,12 @@
     text-align: right;
   }
 
+  .product-price {
+    font-size: $font-size-14;
+  }
+
   .product-installment {
     font-size: $font-size-14;
+    width: 100%;
   }
 }
