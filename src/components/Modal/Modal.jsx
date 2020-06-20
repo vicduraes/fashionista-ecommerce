@@ -2,11 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import PropTypes from "prop-types";
 import SearchBar from "../SearchBar/SearchBar";
-import Subtotal from "../Subtotal/Subtotal";
-import CardSearch from "../CardSearch/CardSearch";
 import NavbarSecondary from "../NavbarSecondary/NavbarSecondary";
-import CardShop from "../CardShop/CardShop";
-import ItensCount from "../ItensCount/ItensCount";
 import "./Modal.scss";
 
 const Modal = (props) => {
@@ -18,16 +14,6 @@ const Modal = (props) => {
         <div className={show ? "modal" : "hide"}>
           <NavbarSecondary total="3" closeModal={closeModal} />
           <SearchBar />
-          <div className="cards-box">
-            <ItensCount totalCount="2" />
-            <CardSearch />
-            <CardSearch />
-            <CardSearch />
-            <CardShop />
-            <CardShop />
-            <CardShop />
-          </div>
-          <Subtotal subtotal="400" />
         </div>
       </div>
     </>
