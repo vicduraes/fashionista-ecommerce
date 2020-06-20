@@ -22,7 +22,7 @@ const catalogReducer = (state = initialState, action) => {
         ...state,
         loading: false,
         error: null,
-        catalog: [...state.catalog, ...action.payload],
+        catalog: [...action.payload],
       };
     case GET_CATALOG_FAILURE:
       return {

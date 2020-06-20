@@ -17,7 +17,7 @@ const ItensCount = (props) => {
 };
 
 ItensCount.propTypes = {
-  totalCount: PropTypes.string.isRequired,
+  totalCount: PropTypes.number.isRequired,
 };
 
 export default ItensCount;
