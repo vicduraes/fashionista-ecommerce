@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import SearchButton from "../SearchButton/SearchButton";
 import CardSearch from "../CardSearch/CardSearch";
 import ItensCount from "../ItensCount/ItensCount";
@@ -50,8 +51,16 @@ const SearchBar = () => {
       </div>
       <div className="cards-box">
         <ItensCount totalCount={productsList.length} />
-        {productsList.map((prod, i) => (
-          <CardSearch product={prod} key={i} />
+        {productsList.map((prod) => (
+          <Link
+            to={{
+              pathname: `/produto/${prod.style}`,
+              state: { id: prod.style },
+            }}
+            style={{ textDecoration: "none" }}
+          >
+            <CardSearch key={prod.style} product={prod} />
+          </Link>
         ))}
       </div>
     </>
