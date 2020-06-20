@@ -49,7 +49,7 @@ const SearchBar = () => {
         </div>
       </div>
       <div className="cards-box">
-        <ItensCount totalCount="2" />
+        <ItensCount totalCount={productsList.length} />
         {productsList.map((prod, i) => (
           <CardSearch product={prod} key={i} />
         ))}
