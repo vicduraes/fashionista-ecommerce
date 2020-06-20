@@ -6,7 +6,7 @@ const handleErrors = (response) => {
 };
 
 const getAPI = () =>
-  fetch("https://5e9935925eabe7001681c856.mockapi.io/api/v1/catalog")
+  fetch(`${process.env.REACT_APP_API}`)
     .then(handleErrors)
     .then((data) => data);
 
