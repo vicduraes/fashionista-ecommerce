@@ -10,6 +10,8 @@ import ScrollToTop from "../../components/ScrollToTop/ScrollToTop";
 import ItensCount from "../../components/ItensCount/ItensCount";
 import Card from "../../components/Card/Card";
 import Loading from "../../components/Loading/Loading";
+import Error from "../../components/Error/Error";
+
 
 import "./Home.scss";
 
@@ -36,27 +38,11 @@ const Products = (props) => {
   );
 };
 
-const Error = () => {
-  return (
-    <>
-      <div className="error-block">
-        <span className="error-block__ops">Ops!</span>
-        <span className="error-block__message">
-          Ocorreu um erro inesperado. Tente novamente.
-        </span>
-      </div>
-    </>
-  );
-};
-
 const Catalog = (props) => {
   const { loading, error, catalog } = props;
-  if (loading) {
-    return <Loading />;
-  }
-  if (error) {
-    return <Error />;
-  }
+  if (loading) return <Loading />;
+
+  if (error) return <Error />;
 
   return <Products catalog={catalog} />;
 };

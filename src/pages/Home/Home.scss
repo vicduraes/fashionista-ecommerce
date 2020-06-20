@@ -14,24 +14,6 @@
   margin: 0 auto;
 }
 
-.error-block {
-  margin: 0 auto;
-  padding: 20% 0;
-  width: 80%;
-  font-size: $font-size-32;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-
-  &__ops {
-    font-size: $font-size-62;
-    text-transform: uppercase;
-    font-weight: 600;
-    color: $color-primary;
-  }
-}
-
 @media only screen and (min-width: $breakpoint-tablet) {
   .product-catalog {
     grid-template-columns: repeat(4, 1fr);
