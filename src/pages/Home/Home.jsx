@@ -13,8 +13,56 @@ import Loading from "../../components/Loading/Loading";
 
 import "./Home.scss";
 
+const Products = (props) => {
+  const { catalog } = props;
+  return (
+    <>
+      <ItensCount totalCount={catalog.length} />
+      <ScrollToTop />
+      <div className="product-catalog">
+        {catalog.map((product) => (
+          <Link
+            to={{
+              pathname: `/produto/${product.style}`,
+              state: { id: product.style },
+            }}
+            style={{ textDecoration: "none" }}
+          >
+            <Card key={product.style} product={product} />
+          </Link>
+        ))}
+      </div>
+    </>
+  );
+};
+
+const Error = () => {
+  return (
+    <>
+      <div className="error-block">
+        <span className="error-block__ops">Ops!</span>
+        <span className="error-block__message">
+          Ocorreu um erro inesperado. Tente novamente.
+        </span>
+      </div>
+    </>
+  );
+};
+
+const Catalog = (props) => {
+  const { loading, error, catalog } = props;
+  if (loading) {
+    return <Loading />;
+  }
+  if (error) {
+    return <Error />;
+  }
+
+  return <Products catalog={catalog} />;
+};
+
 const Home = () => {
-  const { loading, catalog } = useSelector((state) => state.catalog);
+  const { loading, catalog, error } = useSelector((state) => state.catalog);
   const dispatch = useDispatch();
 
   const getCatalogAction = useMemo(
@@ -30,36 +78,7 @@ const Home = () => {
     <>
       <Navbar />
       <div className="container">
-        {loading ? (
-          <Loading />
-        ) : (
-          <>
-            <ItensCount totalCount={catalog.length} />
-            <ScrollToTop />
-            <div className="product-catalog">
-              {catalog.map((product, k) => (
-                <Link
-                  key={k}
-                  to={{
-                    pathname: `/produto/${product.style}`,
-                    state: { id: product.style },
-                  }}
-                  style={{ textDecoration: "none" }}
-                >
-                  <Card key={product.style} product={product} />
-                </Link>
-              ))}
-            </div>
-          </>
-        )}
-        {/* // (
-        //   <div className="error-block">
-        //     <span className="error-block__ops">Ops!</span>
-        //     <span className="error-block__message">
-        //       Ocorreu um erro inesperado. Tente novamente.
-        //     </span>
-        //   </div>
-        // ) */}
+        <Catalog catalog={catalog} error={error} loading={loading} />
       </div>
     </>
   );
