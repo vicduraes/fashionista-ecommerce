@@ -2,7 +2,6 @@ import React from "react";
 import ReactDOM from "react-dom";
 import PropTypes from "prop-types";
 import SearchBar from "../SearchBar/SearchBar";
-import Subtotal from "../Subtotal/Subtotal";
 import NavbarSecondary from "../NavbarSecondary/NavbarSecondary";
 import "./Modal.scss";
 
@@ -15,7 +14,6 @@ const Modal = (props) => {
         <div className={show ? "modal" : "hide"}>
           <NavbarSecondary total="3" closeModal={closeModal} />
           <SearchBar />
-          <Subtotal subtotal="400" />
         </div>
       </div>
     </>
