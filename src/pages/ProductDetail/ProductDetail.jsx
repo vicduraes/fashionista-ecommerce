@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useCallback } from "react";
 import { useSelector, connect } from "react-redux";
 
 import { GET_PRODUCT_REQUEST } from "../../store/actions/product";
@@ -10,13 +10,13 @@ import Loading from "../../components/Loading/Loading";
 const ProductDetail = ({ location, getProduct }) => {
   const { loading, product } = useSelector((state) => state.product);
 
-  const getProductAction = () => {
+  const getProductAction = useCallback(() => {
     getProduct(location.state.id);
-  };
+  }, [location.state.id, getProduct]);
 
   useEffect(() => {
     getProductAction();
-  }, []);
+  }, [getProductAction]);
 
   return (
     <div className="product-detail">

@@ -33,7 +33,7 @@ const SearchBar = () => {
     } else {
       setProductsList([]);
     }
-  }, [searchTerm]);
+  }, [searchTerm, catalog]);
 
   return (
     <>
