@@ -18,6 +18,7 @@
   },
   "plugins": ["react"],
   "rules": {
+    "react-hooks/exhaustive-deps": "off",
     "react/jsx-filename-extension": [
       1,
       {
