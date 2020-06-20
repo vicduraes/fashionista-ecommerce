@@ -1,7 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import PropTypes from "prop-types";
-// import BackArrowIcon from "../BackArrowIcon/BackArrowIcon";
 import SearchBar from "../SearchBar/SearchBar";
 import Subtotal from "../Subtotal/Subtotal";
 import CardSearch from "../CardSearch/CardSearch";
