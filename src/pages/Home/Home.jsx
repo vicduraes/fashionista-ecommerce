@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useMemo } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { bindActionCreators } from "redux";
 import { Link } from "react-router-dom";
@@ -9,35 +9,45 @@ import Navbar from "../../components/Navbar/Navbar";
 import ScrollToTop from "../../components/ScrollToTop/ScrollToTop";
 import ItensCount from "../../components/ItensCount/ItensCount";
 import Card from "../../components/Card/Card";
+import Loading from "../../components/Loading/Loading";
 
 import "./Home.scss";
 
 const Home = () => {
   const { loading, catalog } = useSelector((state) => state.catalog);
   const dispatch = useDispatch();
-  const getCatalogAction = bindActionCreators(getCatalog, dispatch);
+
+  const getCatalogAction = useMemo(
+    () => bindActionCreators(getCatalog, dispatch),
+    [dispatch]
+  );
 
   useEffect(() => {
     getCatalogAction();
-  }, []);
+  }, [getCatalogAction]);
 
   return (
     <>
       <Navbar />
       <div className="container">
         {loading ? (
-          <span>Carregando...</span>
+          <Loading />
         ) : (
           <>
             <ItensCount totalCount={catalog.length} />
             <ScrollToTop />
             <div className="product-catalog">
-              {catalog.map((product) => (
-                <Link to={{pathname:`/produto/${product.style}`, 
-                state:{id: product.style}}}  
-                style={{ textDecoration: "none" }}>
+              {catalog.map((product, k) => (
+                <Link
+                  key={k}
+                  to={{
+                    pathname: `/produto/${product.style}`,
+                    state: { id: product.style },
+                  }}
+                  style={{ textDecoration: "none" }}
+                >
                   <Card key={product.style} product={product} />
-                </Link>                
+                </Link>
               ))}
             </div>
           </>
