@@ -1,11 +1,12 @@
 import React from "react";
-
-import "./CardSearch.scss";
+import PropTypes from "prop-types";
 
 import ProductImg from "../ProductImg/ProductImg";
 import ProductName from "../ProductName/ProductName";
 import ProductPrice from "../ProductPrice/ProductPrice";
 import ProductInstallment from "../ProductInstallment/ProductInstallment";
+
+import "./CardSearch.scss";
 
 const CardSearch = (props) => {
   const { product } = props;
@@ -29,7 +30,12 @@ const CardSearch = (props) => {
 };
 
 CardSearch.propTypes = {
-  product: PropTypes.object.isRequired,
+  product: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired,
+    actual_price: PropTypes.string.isRequired,
+    installments: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 export default CardSearch;
