@@ -5,9 +5,10 @@ import { GET_PRODUCT_REQUEST } from "../../store/actions/product";
 
 import Navbar from "../../components/Navbar/Navbar";
 import Detail from "../../components/Detail/Detail";
+import Loading from "../../components/Loading/Loading";
 
 const ProductDetail = ({ location, getProduct }) => {
-  const { product } = useSelector((state) => state.product);
+  const { loading, product } = useSelector((state) => state.product);
 
   const getProductAction = () => {
     getProduct(location.state.id);
@@ -19,10 +20,14 @@ const ProductDetail = ({ location, getProduct }) => {
 
   return (
     <div className="product-detail">
-      <>
-        <Navbar />
-        <Detail product={product} />
-      </>
+      {loading ? (
+        <Loading />
+      ) : (
+        <>
+          <Navbar />
+          <Detail product={product} />
+        </>
+      )}
     </div>
   );
 };

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useMemo } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { bindActionCreators } from "redux";
 import { Link } from "react-router-dom";
@@ -9,6 +9,7 @@ import Navbar from "../../components/Navbar/Navbar";
 import ScrollToTop from "../../components/ScrollToTop/ScrollToTop";
 import ItensCount from "../../components/ItensCount/ItensCount";
 import Card from "../../components/Card/Card";
+import Loading from "../../components/Loading/Loading";
 
 import "./Home.scss";
 
@@ -48,8 +49,6 @@ const Error = () => {
   );
 };
 
-const Loading = () => <span>Carregando...</span>;
-
 const Catalog = (props) => {
   const { loading, error, catalog } = props;
   if (loading) {
@@ -65,11 +64,15 @@ const Catalog = (props) => {
 const Home = () => {
   const { loading, catalog, error } = useSelector((state) => state.catalog);
   const dispatch = useDispatch();
-  const getCatalogAction = bindActionCreators(getCatalog, dispatch);
+
+  const getCatalogAction = useMemo(
+    () => bindActionCreators(getCatalog, dispatch),
+    [dispatch]
+  );
 
   useEffect(() => {
     getCatalogAction();
-  }, []);
+  }, [getCatalogAction]);
 
   return (
     <>
