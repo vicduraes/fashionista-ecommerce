@@ -27,6 +27,7 @@ const productReducer = (state = initialState, action) => {
     case GET_PRODUCT_FAILURE:
       return {
         ...state,
+        loading: false,
         error: action.error,
       };
     default:
