@@ -7,6 +7,49 @@ import ItensCount from "../ItensCount/ItensCount";
 
 import "./SearchBar.scss";
 
+const EmptyContentError = () => {
+  return (
+    <div className="search-error">
+      <span className="search-error--highlight">Ops!</span>
+      <span>
+        Nenhum resultado encontrado para a sua pesquisa =(
+      </span>
+    </div>
+  );
+};
+
+const Cards = (props) => {
+  const { productsList } = props;
+  return (
+    <div className="cards-box">
+      {productsList.length ? (
+        <ItensCount totalCount={productsList.length} />
+      ) : (
+        <></>
+      )}
+      {productsList.map((prod) => (
+        <Link
+          to={{
+            pathname: `/produto/${prod.style}`,
+            state: { id: prod.style },
+          }}
+          style={{ textDecoration: "none" }}
+        >
+          <CardSearch key={prod.style} product={prod} />
+        </Link>
+      ))}
+    </div>
+  );
+};
+
+const Content = (props) => {
+  const { productsList, searchTerm } = props;
+
+  if (searchTerm && productsList.length === 0) return <EmptyContentError />;
+
+  return <Cards productsList={productsList} />;
+};
+
 const SearchBar = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [productsList, setProductsList] = useState([]);
@@ -49,20 +92,7 @@ const SearchBar = () => {
           <SearchButton onClick={handleOnChange} />
         </div>
       </div>
-      <div className="cards-box">
-        <ItensCount totalCount={productsList.length} />
-        {productsList.map((prod) => (
-          <Link
-            to={{
-              pathname: `/produto/${prod.style}`,
-              state: { id: prod.style },
-            }}
-            style={{ textDecoration: "none" }}
-          >
-            <CardSearch key={prod.style} product={prod} />
-          </Link>
-        ))}
-      </div>
+      <Content productsList={productsList} searchTerm={searchTerm} />
     </>
   );
 };

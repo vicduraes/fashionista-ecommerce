@@ -28,3 +28,23 @@
     }
   }
 }
+
+.search-error {
+  margin: 0 auto;
+  padding: 15vh 0;
+  width: 60vh;
+  font-size: $font-size-22;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  align-content: center;
+  
+
+  &--highlight {
+    color: $color-primary;
+    font-size: $font-size-24;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+}
