@@ -73,8 +73,8 @@ const Navbar = () => {
                   <CardShop />
                 </Link>
                 {/* ))} */}
-                <Subtotal subtotal="100" />
               </div>
+              <Subtotal subtotal="100" />
             </Modal>
           </div>
         </div>
