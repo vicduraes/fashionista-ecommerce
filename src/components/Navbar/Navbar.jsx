@@ -1,20 +1,28 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
+import Modal from "../Modal/Modal";
 import ShoppingCart from "../ShoppingCart/ShoppingCart";
 import BackArrowIcon from "../BackArrowIcon/BackArrowIcon";
 import SearchButton from "../SearchButton/SearchButton";
-import Modal from "../Modal/Modal";
+import SearchBar from "../SearchBar/SearchBar";
+import NavbarSecondary from "../NavbarSecondary/NavbarSecondary";
+import CardShop from "../CardShop/CardShop";
+import Subtotal from "../Subtotal/Subtotal";
 
 import logo from "../../assets/images/logo.svg";
 
 import "./Navbar.scss";
 
 const Navbar = () => {
-  const [show, setShow] = useState(false);
+  const [showSearch, setShowSearch] = useState(false);
+  const [showCart, setShowCart] = useState(false);
 
-  const openModal = () => setShow(true);
-  const closeModal = () => setShow(false);
+  const openModalSearch = () => setShowSearch(true);
+  const closeModalSearch = () => setShowSearch(false);
+
+  const openModalCart = () => setShowCart(true);
+  const closeModalCart = () => setShowCart(false);
 
   return (
     <>
@@ -34,11 +42,40 @@ const Navbar = () => {
           </figure>
           <div className="navbar__elements--desktop">
             <span className="navbar__search-button">
-              <SearchButton handleClick={openModal} />
-              <Modal closeModal={closeModal} show={show} />
+              <SearchButton handleClick={openModalSearch} />
+              <Modal closeModal={closeModalSearch} show={showSearch}>
+                <NavbarSecondary
+                  text="Buscar Produtos"
+                  closeModal={closeModalSearch}
+                />
+                <SearchBar />
+              </Modal>
             </span>
-            <ShoppingCart handleClick={openModal} />
-            <Modal closeModal={closeModal} show={show} />
+            <ShoppingCart handleClick={openModalCart} />
+            <Modal closeModal={closeModalCart} show={showCart}>
+              <NavbarSecondary
+                text="Sacola"
+                total="3"
+                closeModal={closeModalCart}
+              />
+
+              <div className="cards-box">
+                {/* {productsList.map((prod) => ( */}
+                <Link
+                  // to={{
+                  //   pathname: `/produto/${prod.style}`,
+                  //   state: { id: prod.style },
+                  // }}
+                  style={{ textDecoration: "none" }}
+                >
+                  <CardShop />
+                  <CardShop />
+                  <CardShop />
+                </Link>
+                {/* ))} */}
+                <Subtotal subtotal="100" />
+              </div>
+            </Modal>
           </div>
         </div>
       </nav>
