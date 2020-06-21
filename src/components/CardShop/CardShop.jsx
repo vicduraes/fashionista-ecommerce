@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import "./CardShop.scss";
 
@@ -11,6 +11,16 @@ import ProductInstallment from "../ProductInstallment/ProductInstallment";
 import imgDefault from "../../assets/images/img-default.jpg";
 
 const CardShop = () => {
+  const [quantity, setQuantity] = useState(1);
+
+  const IncrementQuantity = () => {
+    setQuantity(quantity + 1);
+  };
+  const DecreaseQuantity = () => {
+    if (quantity === 1) return;
+    setQuantity(quantity - 1);
+  };
+
   return (
     <>
       <div className="card-shop">
@@ -31,13 +41,15 @@ const CardShop = () => {
                 <FontAwesomeIcon
                   className="card-shop__quantity-icon"
                   icon={faMinusCircle}
+                  onClick={DecreaseQuantity}
                 />
               </button>
-              <span className="card-shop__quantity-number"> 1 </span>
+              <span className="card-shop__quantity-number"> {quantity} </span>
               <button type="button" className="card-shop__quantity-btn">
                 <FontAwesomeIcon
                   className="card-shop__quantity-icon"
                   icon={faPlusCircle}
+                  onClick={IncrementQuantity}
                 />
               </button>
             </div>
