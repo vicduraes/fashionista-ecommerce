@@ -1,10 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import "./NavbarSecondary.scss";
+import "./ModalHeader.scss";
 import BackArrowIcon from "../BackArrowIcon/BackArrowIcon";
 
-const NavbarSecondary = (props) => {
+const ModalHeader = (props) => {
   const { text, total, closeModal } = props;
   const fullText = total ? `Sacola (${total})` : text;
 
@@ -18,10 +18,10 @@ const NavbarSecondary = (props) => {
   );
 };
 
-NavbarSecondary.propTypes = {
+ModalHeader.propTypes = {
   total: PropTypes.number.isRequired,
   text: PropTypes.string.isRequired,
   closeModal: PropTypes.func.isRequired,
 };
 
-export default NavbarSecondary;
+export default ModalHeader;
