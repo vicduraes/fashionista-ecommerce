@@ -6,7 +6,7 @@ import ShoppingCart from "../ShoppingCart/ShoppingCart";
 import BackArrowIcon from "../BackArrowIcon/BackArrowIcon";
 import SearchButton from "../SearchButton/SearchButton";
 import SearchBar from "../SearchBar/SearchBar";
-import NavbarSecondary from "../NavbarSecondary/NavbarSecondary";
+import ModalHeader from "../ModalHeader/ModalHeader";
 import CardShop from "../CardShop/CardShop";
 import Subtotal from "../Subtotal/Subtotal";
 
@@ -44,7 +44,7 @@ const Navbar = () => {
             <span className="navbar__search-button">
               <SearchButton handleClick={openModalSearch} />
               <Modal closeModal={closeModalSearch} show={showSearch}>
-                <NavbarSecondary
+                <ModalHeader
                   text="Buscar Produtos"
                   closeModal={closeModalSearch}
                 />
@@ -53,7 +53,7 @@ const Navbar = () => {
             </span>
             <ShoppingCart handleClick={openModalCart} />
             <Modal closeModal={closeModalCart} show={showCart}>
-              <NavbarSecondary
+              <ModalHeader
                 text="Sacola"
                 total="3"
                 closeModal={closeModalCart}
