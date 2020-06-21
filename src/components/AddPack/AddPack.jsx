@@ -4,7 +4,7 @@ import classnames from "classnames";
 import "./AddPack.scss";
 
 const AddPack = (props) => {
-  const { selectedSize } = props;
+  const { selectedSize, product } = props;
 
   const disabledButton = () => {
     let bool = true;
@@ -12,6 +12,13 @@ const AddPack = (props) => {
       bool = false;
     }
     return bool;
+  };
+
+  const addProductToCart = () => {
+    if (!localStorage.getItem("amoraCart")) {
+      return localStorage.setItem("amoraCart", JSON.stringify(product));
+    }
+    return localStorage.setItem("amoraCart", JSON.stringify(product));
   };
 
   return (
@@ -22,6 +29,7 @@ const AddPack = (props) => {
           "add-pack__button--disabled": selectedSize === "",
         })}
         disabled={disabledButton()}
+        onClick={() => addProductToCart()}
       >
         Adicionar à sacola
       </button>

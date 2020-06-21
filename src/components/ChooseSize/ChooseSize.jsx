@@ -22,13 +22,13 @@ const ChooseSize = (props) => {
             (size) =>
               size.available && (
                 <button
-                  key={size.sku}
+                  key={size.size}
                   type="button"
                   className={classnames("field-choose-size__size-button", {
                     "field-choose-size__size-button--click":
-                      idButton === size.sku,
+                      idButton === size.size,
                   })}
-                  onClick={() => handleClickButton(size.sku)}
+                  onClick={() => handleClickButton(size.size)}
                 >
                   {size.size}
                 </button>
