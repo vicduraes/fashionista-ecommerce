@@ -7,8 +7,7 @@ import BackArrowIcon from "../BackArrowIcon/BackArrowIcon";
 import SearchButton from "../SearchButton/SearchButton";
 import SearchBar from "../SearchBar/SearchBar";
 import NavbarSecondary from "../NavbarSecondary/NavbarSecondary";
-import CardShop from "../CardShop/CardShop";
-import Subtotal from "../Subtotal/Subtotal";
+import CartList from "../CartList/CartList";
 
 import logo from "../../assets/images/logo.svg";
 
@@ -63,25 +62,10 @@ const Navbar = () => {
             <Modal closeModal={closeModalCart} show={showCart}>
               <NavbarSecondary
                 text="Sacola"
-                total="3"
+                total={cartProducts.products.length}
                 closeModal={closeModalCart}
               />
-
-              <div className="cards-box">
-                {cartProducts &&
-                  cartProducts.products.map((prod) => (
-                    <Link
-                      to={{
-                        pathname: `/produto/${prod.style}`,
-                        state: { id: prod.style },
-                      }}
-                      style={{ textDecoration: "none" }}
-                    >
-                      <CardShop key={prod.style} product={prod} />
-                    </Link>
-                  ))}
-              </div>
-              <Subtotal subtotal="100" />
+              <CartList cartProducts={cartProducts} />
             </Modal>
           </div>
         </div>
