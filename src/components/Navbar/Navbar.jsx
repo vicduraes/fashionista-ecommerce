@@ -24,6 +24,14 @@ const Navbar = () => {
   const openModalCart = () => setShowCart(true);
   const closeModalCart = () => setShowCart(false);
 
+  const currentCartProducts = localStorage.getItem("amoraCart")
+    ? localStorage.getItem("amoraCart")
+    : false;
+
+  const [cartProducts, setCartProducts] = useState(
+    JSON.parse(currentCartProducts)
+  );
+
   return (
     <>
       <nav className="navbar">
@@ -60,19 +68,18 @@ const Navbar = () => {
               />
 
               <div className="cards-box">
-                {/* {productsList.map((prod) => ( */}
-                <Link
-                  // to={{
-                  //   pathname: `/produto/${prod.style}`,
-                  //   state: { id: prod.style },
-                  // }}
-                  style={{ textDecoration: "none" }}
-                >
-                  <CardShop />
-                  <CardShop />
-                  <CardShop />
-                </Link>
-                {/* ))} */}
+                {cartProducts &&
+                  cartProducts.products.map((prod) => (
+                    <Link
+                      to={{
+                        pathname: `/produto/${prod.style}`,
+                        state: { id: prod.style },
+                      }}
+                      style={{ textDecoration: "none" }}
+                    >
+                      <CardShop key={prod.style} product={prod} />
+                    </Link>
+                  ))}
               </div>
               <Subtotal subtotal="100" />
             </Modal>

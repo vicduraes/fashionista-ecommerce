@@ -15,10 +15,21 @@ const AddPack = (props) => {
   };
 
   const addProductToCart = () => {
-    if (!localStorage.getItem("amoraCart")) {
-      return localStorage.setItem("amoraCart", JSON.stringify(product));
+    const amoraCart = localStorage.getItem("amoraCart");
+    let products = [];
+    const obj = {};
+
+    if (amoraCart) {
+      const objAmoraCart = JSON.parse(amoraCart);
+      products = objAmoraCart.products;
+      obj.count = objAmoraCart.count + 1;
+    } else {
+      obj.count = 1;
     }
-    return localStorage.setItem("amoraCart", JSON.stringify(product));
+
+    products.push(product);
+    obj.products = products;
+    localStorage.setItem("amoraCart", JSON.stringify(obj));
   };
 
   return (
