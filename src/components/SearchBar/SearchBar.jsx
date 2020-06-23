@@ -11,9 +11,7 @@ const EmptyContentError = () => {
   return (
     <div className="search-error">
       <span className="search-error--highlight">Ops!</span>
-      <span>
-        Nenhum resultado encontrado para a sua pesquisa =(
-      </span>
+      <span>Nenhum resultado encontrado para a sua pesquisa =(</span>
     </div>
   );
 };
@@ -57,7 +55,6 @@ const SearchBar = () => {
 
   const removeSpecialChar = (text) => {
     return text
-      .trim()
       .toLowerCase()
       .normalize("NFD")
       .replace(/[\u0300-\u036f]/g, "");

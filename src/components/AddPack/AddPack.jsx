@@ -14,24 +14,6 @@ const AddPack = (props) => {
     return bool;
   };
 
-  const addProductToCart = () => {
-    const amoraCart = localStorage.getItem("amoraCart");
-    let products = [];
-    const obj = {};
-
-    if (amoraCart) {
-      const objAmoraCart = JSON.parse(amoraCart);
-      products = objAmoraCart.products;
-      obj.count = objAmoraCart.count + 1;
-    } else {
-      obj.count = 1;
-    }
-
-    products.push(product);
-    obj.products = products;
-    localStorage.setItem("amoraCart", JSON.stringify(obj));
-  };
-
   return (
     <div className="add-pack">
       <button
@@ -40,7 +22,7 @@ const AddPack = (props) => {
           "add-pack__button--disabled": selectedSize === "",
         })}
         disabled={disabledButton()}
-        onClick={() => addProductToCart()}
+        // onClick={() => addProductToCart()}
       >
         Adicionar à sacola
       </button>
