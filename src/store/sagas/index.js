@@ -2,6 +2,7 @@ import { all, fork, takeEvery, call, put } from "redux-saga/effects";
 
 import * as catalogActions from "../actions/catalog";
 import * as productActions from "../actions/product";
+import * as cartActions from "../actions/cart";
 
 import getAPI from "../../service/api";
 
@@ -34,4 +35,10 @@ function* watchGetProduct() {
 
 export default function* root() {
   yield all([fork(watchGetCatalog), fork(watchGetProduct)]);
+}
+
+function* addProductToCart({ payload }) {
+  const obj = products.push(product);
+  obj.products = products;
+  localStorage.setItem("amoraCart", JSON.stringify(obj));
 }
