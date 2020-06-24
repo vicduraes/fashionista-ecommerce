@@ -27,9 +27,7 @@ const Navbar = () => {
     ? localStorage.getItem("amoraCart")
     : false;
 
-  const [cartProducts, setCartProducts] = useState(
-    JSON.parse(currentCartProducts)
-  );
+  const [cartProducts] = useState(JSON.parse(currentCartProducts));
 
   return (
     <>
@@ -62,7 +60,11 @@ const Navbar = () => {
             <Modal closeModal={closeModalCart} show={showCart}>
               <ModalHeader
                 text="Sacola"
-                total={cartProducts.products.length}
+                total={
+                  cartProducts.products !== undefined
+                    ? cartProducts.products.length
+                    : 0
+                }
                 closeModal={closeModalCart}
               />
               <CartList cartProducts={cartProducts} />

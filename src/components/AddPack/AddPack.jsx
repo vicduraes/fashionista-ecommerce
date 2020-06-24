@@ -1,10 +1,20 @@
-import React from "react";
+import React, { useMemo } from "react";
+import { useDispatch } from "react-redux";
+import { bindActionCreators } from "redux";
 import classnames from "classnames";
+
+import { addProduct } from "../../store/actions/cart";
 
 import "./AddPack.scss";
 
 const AddPack = (props) => {
   const { selectedSize, product } = props;
+  const dispatch = useDispatch();
+
+  const addProductAction = useMemo(
+    () => bindActionCreators(addProduct, dispatch),
+    [dispatch]
+  );
 
   const disabledButton = () => {
     let bool = true;
@@ -22,7 +32,7 @@ const AddPack = (props) => {
           "add-pack__button--disabled": selectedSize === "",
         })}
         disabled={disabledButton()}
-        // onClick={() => addProductToCart()}
+        onClick={() => addProductAction(product)}
       >
         Adicionar à sacola
       </button>
