@@ -12,7 +12,7 @@ const ShoppingCart = (props) => {
   const jsonDoLocal = JSON.parse(pegaDoLocal);
   const count = jsonDoLocal.count || 0;
 
-  const [countProducts, setCountProducts] = useState(count);
+  const [countProducts] = useState(count);
 
   return (
     <button type="button" className="shopping-cart" onClick={handleClick}>
