@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import PropTypes from "prop-types";
 
-import "./Detail.scss";
+import PropTypes from "prop-types";
 
 import ProductImg from "../ProductImg/ProductImg";
 import ChooseSize from "../ChooseSize/ChooseSize";
@@ -11,6 +10,8 @@ import ProductPrice from "../ProductPrice/ProductPrice";
 import ProductInstallment from "../ProductInstallment/ProductInstallment";
 import BackToCatalog from "../BackToCatalog/BackToCatalog";
 
+import "./Detail.scss";
+
 const Detail = (props) => {
   const { product } = props;
   const [selectedSize, setSelectedSize] = useState("");
@@ -18,7 +19,6 @@ const Detail = (props) => {
   return (
     <>
       <div className="detail">
-       
         <ProductImg src={product.image} imgDesciption={product.name} />
         <div className="detail__info">
           <div className="detail__box">
@@ -30,7 +30,6 @@ const Detail = (props) => {
             <ChooseSize
               sizes={product.sizes}
               setSelectedSize={setSelectedSize}
-              
             />
             <AddPack selectedSize={selectedSize} />
           </div>

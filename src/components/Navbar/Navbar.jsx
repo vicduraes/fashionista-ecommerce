@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 import Modal from "../Modal/Modal";
 import ShoppingCart from "../ShoppingCart/ShoppingCart";
@@ -15,6 +16,9 @@ import logo from "../../assets/images/logo.svg";
 import "./Navbar.scss";
 
 const Navbar = () => {
+  const products = useSelector((state) => state.cart.products);
+  console.log(products);
+
   const [showSearch, setShowSearch] = useState(false);
   const [showCart, setShowCart] = useState(false);
 
@@ -58,21 +62,10 @@ const Navbar = () => {
                 total="3"
                 closeModal={closeModalCart}
               />
-
               <div className="cards-box">
-                {/* {productsList.map((prod) => ( */}
-                <Link
-                  // to={{
-                  //   pathname: `/produto/${prod.style}`,
-                  //   state: { id: prod.style },
-                  // }}
-                  style={{ textDecoration: "none" }}
-                >
-                  <CardShop />
-                  <CardShop />
-                  <CardShop />
-                </Link>
-                {/* ))} */}
+                {products.map((product) => (
+                  <CardShop product={product} />
+                ))}
               </div>
               <Subtotal subtotal="100" />
             </Modal>
