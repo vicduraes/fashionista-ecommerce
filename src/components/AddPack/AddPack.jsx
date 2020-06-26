@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useMemo } from "react";
+import { useDispatch } from "react-redux";
+import { bindActionCreators } from "redux";
 import classnames from "classnames";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../../store/actions/cart";
+
+import { addProduct } from "../../store/actions/cart";
 
 import "./AddPack.scss";
 
