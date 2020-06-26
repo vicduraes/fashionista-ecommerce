@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { BrowserRouter as Router, Link } from "react-router-dom";
 
 import Modal from "../Modal/Modal";
 import ShoppingCart from "../ShoppingCart/ShoppingCart";
@@ -32,13 +32,15 @@ const Navbar = () => {
             <BackArrowIcon />
           </span>
           <figure>
-            <Link to="/" style={{ textDecoration: "none" }}>
-              <img
-                alt="logo da Fashionista"
-                className="navbar__logo"
-                src={logo}
-              />
-            </Link>
+            <Router>
+              <Link to="/" style={{ textDecoration: "none" }}>
+                <img
+                  alt="logo da Fashionista"
+                  className="navbar__logo"
+                  src={logo}
+                />
+              </Link>
+            </Router>
           </figure>
           <div className="navbar__elements--desktop">
             <span className="navbar__search-button">
@@ -61,17 +63,19 @@ const Navbar = () => {
 
               <div className="cards-box">
                 {/* {productsList.map((prod) => ( */}
-                <Link
-                  // to={{
-                  //   pathname: `/produto/${prod.style}`,
-                  //   state: { id: prod.style },
-                  // }}
-                  style={{ textDecoration: "none" }}
-                >
-                  <CardShop />
-                  <CardShop />
-                  <CardShop />
-                </Link>
+                <Router>
+                  <Link
+                    // to={{
+                    //   pathname: `/produto/${prod.style}`,
+                    //   state: { id: prod.style },
+                    // }}
+                    style={{ textDecoration: "none" }}
+                  >
+                    <CardShop />
+                    <CardShop />
+                    <CardShop />
+                  </Link>
+                </Router>
                 {/* ))} */}
               </div>
               <Subtotal subtotal="100" />
