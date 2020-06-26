@@ -31,7 +31,7 @@ const Detail = (props) => {
               sizes={product.sizes}
               setSelectedSize={setSelectedSize}
             />
-            <AddPack selectedSize={selectedSize} />
+            <AddPack selectedSize={selectedSize} product={product} />
           </div>
           <div className="detail__box">
             <BackToCatalog />

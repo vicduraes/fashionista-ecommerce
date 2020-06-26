@@ -7,9 +7,8 @@ import ShoppingCart from "../ShoppingCart/ShoppingCart";
 import BackArrowIcon from "../BackArrowIcon/BackArrowIcon";
 import SearchButton from "../SearchButton/SearchButton";
 import SearchBar from "../SearchBar/SearchBar";
+import CartList from "../CartList/CartList";
 import ModalHeader from "../ModalHeader/ModalHeader";
-import CardShop from "../CardShop/CardShop";
-import Subtotal from "../Subtotal/Subtotal";
 
 import logo from "../../assets/images/logo.svg";
 
@@ -27,6 +26,12 @@ const Navbar = () => {
 
   const openModalCart = () => setShowCart(true);
   const closeModalCart = () => setShowCart(false);
+
+  const currentCartProducts = localStorage.getItem("amoraCart")
+    ? localStorage.getItem("amoraCart")
+    : false;
+
+  const [cartProducts] = useState(JSON.parse(currentCartProducts));
 
   return (
     <>
@@ -59,15 +64,19 @@ const Navbar = () => {
             <Modal closeModal={closeModalCart} show={showCart}>
               <ModalHeader
                 text="Sacola"
-                total="3"
+                total={
+                  cartProducts.products !== undefined
+                    ? cartProducts.products.length
+                    : 0
+                }
                 closeModal={closeModalCart}
               />
-              <div className="cards-box">
+              {/* <div className="cards-box">
                 {products.map((product) => (
                   <CardShop product={product} />
                 ))}
-              </div>
-              <Subtotal subtotal="100" />
+              </div> */}
+              <CartList cartProducts={cartProducts} />
             </Modal>
           </div>
         </div>
