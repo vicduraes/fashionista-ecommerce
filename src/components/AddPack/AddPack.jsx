@@ -1,11 +1,7 @@
-import React, { useMemo } from "react";
-import { useDispatch } from "react-redux";
-import { bindActionCreators } from "redux";
+import React from "react";
 import classnames from "classnames";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../../store/actions/cart";
-
-import { addProduct } from "../../store/actions/cart";
 
 import "./AddPack.scss";
 
@@ -30,6 +26,7 @@ const AddPack = (props) => {
         prod.image,
         selectedSize,
         prod.actual_price,
+        prod.style,
         prod.installments
       )
     );

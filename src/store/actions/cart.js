@@ -1,4 +1,4 @@
-export function addToCart(name, image, size, price, installments) {
+export function addToCart(name, image, size, price, style, installments) {
   return {
     type: "@cart/ADD_TO_CART",
     payload: {
@@ -7,6 +7,7 @@ export function addToCart(name, image, size, price, installments) {
         image,
         size,
         price,
+        style,
         installments,
         quantity: 1,
       },
