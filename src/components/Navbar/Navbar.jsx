@@ -1,20 +1,22 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 import Modal from "../Modal/Modal";
 import ShoppingCart from "../ShoppingCart/ShoppingCart";
 import BackArrowIcon from "../BackArrowIcon/BackArrowIcon";
 import SearchButton from "../SearchButton/SearchButton";
 import SearchBar from "../SearchBar/SearchBar";
+import CartList from "../CartList/CartList";
 import ModalHeader from "../ModalHeader/ModalHeader";
-import CardShop from "../CardShop/CardShop";
-import Subtotal from "../Subtotal/Subtotal";
 
 import logo from "../../assets/images/logo.svg";
 
 import "./Navbar.scss";
 
 const Navbar = () => {
+  const products = useSelector((state) => state.cart.products);
+
   const [showSearch, setShowSearch] = useState(false);
   const [showCart, setShowCart] = useState(false);
 
@@ -23,6 +25,10 @@ const Navbar = () => {
 
   const openModalCart = () => setShowCart(true);
   const closeModalCart = () => setShowCart(false);
+
+  const quantityProductCart = () => {
+    return products.reduce((total, next) => (total += next.quantity), 0);
+  };
 
   return (
     <>
@@ -53,32 +59,17 @@ const Navbar = () => {
                 <SearchBar />
               </Modal>
             </span>
-            <ShoppingCart handleClick={openModalCart} />
+            <ShoppingCart
+              handleClick={openModalCart}
+              count={quantityProductCart()}
+            />
             <Modal closeModal={closeModalCart} show={showCart}>
               <ModalHeader
                 text="Sacola"
-                total="3"
+                total={quantityProductCart()}
                 closeModal={closeModalCart}
               />
-
-              <div className="cards-box">
-                {/* {productsList.map((prod) => ( */}
-                <Router>
-                  <Link
-                    // to={{
-                    //   pathname: `/produto/${prod.style}`,
-                    //   state: { id: prod.style },
-                    // }}
-                    style={{ textDecoration: "none" }}
-                  >
-                    <CardShop />
-                    <CardShop />
-                    <CardShop />
-                  </Link>
-                </Router>
-                {/* ))} */}
-              </div>
-              <Subtotal subtotal="100" />
+              <CartList />
             </Modal>
           </div>
         </div>

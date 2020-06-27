@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import PropTypes from "prop-types";
 
-import "./Detail.scss";
+import PropTypes from "prop-types";
 
 import ProductImg from "../ProductImg/ProductImg";
 import ChooseSize from "../ChooseSize/ChooseSize";
@@ -10,6 +9,8 @@ import ProductName from "../ProductName/ProductName";
 import ProductPrice from "../ProductPrice/ProductPrice";
 import ProductInstallment from "../ProductInstallment/ProductInstallment";
 import BackToCatalog from "../BackToCatalog/BackToCatalog";
+
+import "./Detail.scss";
 
 const Detail = (props) => {
   const { product } = props;
@@ -30,7 +31,7 @@ const Detail = (props) => {
               sizes={product.sizes}
               setSelectedSize={setSelectedSize}
             />
-            <AddPack selectedSize={selectedSize} />
+            <AddPack selectedSize={selectedSize} product={product} />
           </div>
           <div className="detail__box">
             <BackToCatalog />
