@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import SearchButton from "../SearchButton/SearchButton";
 import CardSearch from "../CardSearch/CardSearch";
 import ItensCount from "../ItensCount/ItensCount";
 
@@ -54,6 +53,7 @@ const SearchBar = () => {
   const { catalog } = useSelector((state) => state.catalog);
 
   const removeSpecialChar = (text) => {
+    if (!text) return "";
     return text
       .toLowerCase()
       .normalize("NFD")
@@ -86,7 +86,6 @@ const SearchBar = () => {
             value={searchTerm}
             onChange={handleOnChange}
           />
-          <SearchButton onClick={handleOnChange} />
         </div>
       </div>
       <Content productsList={productsList} searchTerm={searchTerm} />
