@@ -26,8 +26,8 @@ const Products = (props) => {
           <Link
             key={uuid()}
             to={{
-              pathname: `/produto/${product.style}`,
-              state: { id: product.style },
+              pathname: `/produto/${product.code_color}`,
+              state: { id: product.code_color },
             }}
             style={{ textDecoration: "none" }}
           >

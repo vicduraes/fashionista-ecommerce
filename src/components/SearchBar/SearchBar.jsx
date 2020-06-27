@@ -29,8 +29,8 @@ const Cards = (props) => {
         <Link
           key={uuid()}
           to={{
-            pathname: `/produto/${prod.style}`,
-            state: { id: prod.style },
+            pathname: `/produto/${prod.code_color}`,
+            state: { id: prod.code_color },
           }}
           style={{ textDecoration: "none" }}
         >

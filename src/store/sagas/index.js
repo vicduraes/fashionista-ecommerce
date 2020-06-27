@@ -21,7 +21,7 @@ function* watchGetCatalog() {
 function* getProduct({ payload }) {
   try {
     const catalog = yield call(getAPI);
-    const product = catalog.find((prod) => prod.style === payload);
+    const product = catalog.find((prod) => prod.code_color === payload);
     yield put(productActions.getProductSuccess(product));
   } catch (error) {
     yield put(productActions.getProductError(error.message));
