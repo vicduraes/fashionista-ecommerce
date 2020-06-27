@@ -14,7 +14,8 @@ import logo from "../../assets/images/logo.svg";
 
 import "./Navbar.scss";
 
-const Navbar = () => {
+const Navbar = (props) => {
+  const { showArrow } = props;
   const products = useSelector((state) => state.cart.products);
 
   const [showSearch, setShowSearch] = useState(false);
@@ -34,9 +35,15 @@ const Navbar = () => {
     <>
       <nav className="navbar">
         <div className="navbar__elements container">
+          { showArrow ?
           <span className="navbar__arrow-button">
-            <BackArrowIcon />
+            <Link to="/">
+              <BackArrowIcon show={showArrow}/>
+            </Link>
           </span>
+          : 
+          null
+          }
           <figure>
             <Link to="/" style={{ textDecoration: "none" }}>
               <img

@@ -11,7 +11,7 @@ const ModalHeader = (props) => {
   return (
     <div className="navbar-secondary">
       <div className="navbar-secondary__arrow">
-        <BackArrowIcon closeFunction={closeModal} />
+        <BackArrowIcon show={true} closeFunction={closeModal} />
       </div>
       <p className="navbar-secondary__total">{fullText}</p>
     </div>

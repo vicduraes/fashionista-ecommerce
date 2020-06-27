@@ -30,7 +30,7 @@ const ProductDetail = ({ location, getProduct }) => {
 
   return (
     <div className="product-detail">
-      <Navbar />
+      <Navbar showArrow={true}/>
       <Details product={product} loading={loading} error={error} />
     </div>
   );
