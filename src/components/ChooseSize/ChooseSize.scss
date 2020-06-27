@@ -8,19 +8,17 @@
   font-size: $font-size-16;
   margin-bottom: 40px;
 
-
   &__button {
-    width: 75%;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     margin-top: 13px;
-   
   }
 
   &__size-button {
     width: 44px;
     height: 44px;
     border-radius: 50px;
+    margin-right: 10px;
     font-size: $font-size-18;
     background-color: $color-gray-bkg;
     border: 2px solid $color-primary;
