@@ -1,4 +1,5 @@
 import React, { useEffect, useMemo } from "react";
+import uuid from "react-uuid";
 import { useSelector, useDispatch } from "react-redux";
 import { bindActionCreators } from "redux";
 import { Link } from "react-router-dom";
@@ -12,7 +13,6 @@ import Card from "../../components/Card/Card";
 import Loading from "../../components/Loading/Loading";
 import Error from "../../components/Error/Error";
 
-
 import "./Home.scss";
 
 const Products = (props) => {
@@ -24,13 +24,14 @@ const Products = (props) => {
       <div className="product-catalog">
         {catalog.map((product) => (
           <Link
+            key={uuid()}
             to={{
-              pathname: `/produto/${product.style}`,
-              state: { id: product.style },
+              pathname: `/produto/${product.code_color}`,
+              state: { id: product.code_color },
             }}
             style={{ textDecoration: "none" }}
           >
-            <Card key={product.style} product={product} />
+            <Card product={product} />
           </Link>
         ))}
       </div>

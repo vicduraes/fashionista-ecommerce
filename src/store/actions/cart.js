@@ -3,7 +3,7 @@ export const REMOVE_FROM_CART = "@actions/cart/remove_from_cart";
 export const ADD_QUANTITY = "@actions/cart/add_quantity";
 export const REMOVE_QUANTITY = "@actions/cart/remove_quantity";
 
-export function addToCart(name, image, size, price, style, installments) {
+export function addToCart(name, image, size, price, codeColor, installments) {
   return {
     type: ADD_TO_CART,
     payload: {
@@ -12,7 +12,7 @@ export function addToCart(name, image, size, price, style, installments) {
         image,
         size,
         price,
-        style,
+        code_color: codeColor,
         installments,
         quantity: 1,
       },

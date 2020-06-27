@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import uuid from "react-uuid";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import CardSearch from "../CardSearch/CardSearch";
@@ -26,13 +27,14 @@ const Cards = (props) => {
       )}
       {productsList.map((prod) => (
         <Link
+          key={uuid()}
           to={{
-            pathname: `/produto/${prod.style}`,
-            state: { id: prod.style },
+            pathname: `/produto/${prod.code_color}`,
+            state: { id: prod.code_color },
           }}
           style={{ textDecoration: "none" }}
         >
-          <CardSearch key={prod.style} product={prod} />
+          <CardSearch product={prod} />
         </Link>
       ))}
     </div>
