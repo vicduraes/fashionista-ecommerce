@@ -23,7 +23,7 @@ const AddPack = (props) => {
     const originalBckColor = e.style.backgroundColor;
 
     e.textContent = "Produto adicionado!";
-    e.style.backgroundColor = "#9c7397";
+    e.style.backgroundColor = "#823978";
 
     setTimeout(() => {
       e.textContent = originalText;
