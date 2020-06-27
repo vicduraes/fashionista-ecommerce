@@ -38,7 +38,7 @@ const AddPack = (props) => {
         prod.image,
         selectedSize,
         prod.actual_price,
-        prod.style,
+        prod.code_color,
         prod.installments
       )
     );
