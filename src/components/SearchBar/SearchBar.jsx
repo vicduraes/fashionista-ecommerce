@@ -86,7 +86,6 @@ const SearchBar = () => {
             value={searchTerm}
             onChange={handleOnChange}
           />
-          <SearchButton onClick={handleOnChange} />
         </div>
       </div>
       <Content productsList={productsList} searchTerm={searchTerm} />
