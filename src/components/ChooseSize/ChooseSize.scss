@@ -10,16 +10,16 @@
 
 
   &__button {
-    width: 72%;
+    width: 75%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     margin-top: 13px;
    
   }
 
   &__size-button {
-    width: 40px;
-    height: 40px;
+    width: 44px;
+    height: 44px;
     border-radius: 50px;
     font-size: $font-size-18;
     background-color: $color-gray-bkg;
