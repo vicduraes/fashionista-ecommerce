@@ -8,6 +8,7 @@ import "./AddPack.scss";
 const AddPack = (props) => {
   const { selectedSize } = props;
   const product = useSelector((state) => state.product.product);
+  const disptach = useDispatch();
 
   const disabledButton = () => {
     let bool = true;
@@ -17,9 +18,20 @@ const AddPack = (props) => {
     return bool;
   };
 
-  const disptach = useDispatch();
+  const feedbackMessage = (e) => {
+    const originalText = e.textContent;
+    const originalBckColor = e.style.backgroundColor;
 
-  function handleAddToCart(prod) {
+    e.textContent = "Produto adicionado!";
+    e.style.backgroundColor = "#9c7397";
+
+    setTimeout(() => {
+      e.textContent = originalText;
+      e.style.backgroundColor = originalBckColor;
+    }, 1500);
+  };
+
+  const handleAddToCart = (e, prod) => {
     disptach(
       addToCart(
         prod.name,
@@ -31,9 +43,10 @@ const AddPack = (props) => {
       )
     );
 
-    // success(`${product.name} adicionado ao carrinho!`);
+    feedbackMessage(e);
+
     return true;
-  }
+  };
 
   return (
     <div className="add-pack">
@@ -43,7 +56,7 @@ const AddPack = (props) => {
           "add-pack__button--disabled": selectedSize === "",
         })}
         disabled={disabledButton()}
-        onClick={() => handleAddToCart(product)}
+        onClick={(e) => handleAddToCart(e.target, product)}
       >
         Adicionar à sacola
       </button>
