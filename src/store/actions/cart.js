@@ -1,6 +1,11 @@
+export const ADD_TO_CART = "@actions/cart/add_to_cart";
+export const REMOVE_FROM_CART = "@actions/cart/remove_from_cart";
+export const ADD_QUANTITY = "@actions/cart/add_quantity";
+export const REMOVE_QUANTITY = "@actions/cart/remove_quantity";
+
 export function addToCart(name, image, size, price, style, installments) {
   return {
-    type: "@cart/ADD_TO_CART",
+    type: ADD_TO_CART,
     payload: {
       product: {
         name,
@@ -17,21 +22,21 @@ export function addToCart(name, image, size, price, style, installments) {
 
 export function deleteFromCart(slug) {
   return {
-    type: "@cart/REMOVE_FROM_CART",
+    type: REMOVE_FROM_CART,
     payload: { slug },
   };
 }
 
 export function addQuantity(slug, quantity = 1) {
   return {
-    type: "@cart/ADD_QUANTITY",
+    type: ADD_QUANTITY,
     payload: { slug, quantity },
   };
 }
 
 export function removeQuantity(slug, quantity = 1) {
   return {
-    type: "@cart/REMOVE_QUANTITY",
+    type: REMOVE_QUANTITY,
     payload: { slug, quantity },
   };
 }

@@ -1,4 +1,12 @@
+/* eslint-disable no-param-reassign */
 import produce from "immer";
+
+import {
+  ADD_TO_CART,
+  REMOVE_FROM_CART,
+  ADD_QUANTITY,
+  REMOVE_QUANTITY,
+} from "../actions/cart";
 
 const INITIAL_STATE = {
   showCart: false,
@@ -10,15 +18,7 @@ const INITIAL_STATE = {
 export default function cart(state = INITIAL_STATE, action) {
   return produce(state, (draft) => {
     switch (action.type) {
-      case "@cart/OPEN_CART": {
-        draft.showCart = true;
-        break;
-      }
-      case "@cart/CLOSE_CART": {
-        draft.showCart = false;
-        break;
-      }
-      case "@cart/ADD_TO_CART": {
+      case ADD_TO_CART: {
         if (
           draft.products.find(
             (product) => product.size === action.payload.product.size
@@ -39,13 +39,13 @@ export default function cart(state = INITIAL_STATE, action) {
         draft.products = [...draft.products, action.payload.product];
         break;
       }
-      case "@cart/REMOVE_FROM_CART": {
+      case REMOVE_FROM_CART: {
         draft.products = draft.products.filter(
           (product) => product.size !== action.payload.slug
         );
         break;
       }
-      case "@cart/ADD_QUANTITY": {
+      case ADD_QUANTITY: {
         draft.products = draft.products.map((product) => {
           if (product.size === action.payload.slug) {
             return {
@@ -57,7 +57,7 @@ export default function cart(state = INITIAL_STATE, action) {
         });
         break;
       }
-      case "@cart/REMOVE_QUANTITY": {
+      case REMOVE_QUANTITY: {
         draft.products = draft.products.map((product) => {
           if (product.size === action.payload.slug && product.quantity > 1) {
             return {
