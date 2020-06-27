@@ -4,24 +4,40 @@ import PropTypes from "prop-types";
 import CardShop from "../CardShop/CardShop";
 import Subtotal from "../Subtotal/Subtotal";
 
-const CartList = () => {
-  const cartProducts = useSelector((state) => state.cart.products);
+import EmptyCartGif from "../../assets/images/emptycart.gif";
 
-  function calculateTotal() {
-    if (!cartProducts) {
-      return 0;
-    }
+import "./CartList.scss";
 
-    return cartProducts
-      .reduce(
-        (total, next) =>
-          (total +=
-            next.quantity *
-            Number(next.price.replace(/R\$ /g, "").replace(",", "."))),
-        0
-      )
-      .toFixed(2);
-  }
+const subtotal = (cartProducts) => {
+  if (cartProducts && cartProducts.lenght === 0) return 0;
+
+  return cartProducts
+    .reduce(
+      (total, next) =>
+        (total +=
+          next.quantity *
+          Number(next.price.replace(/R\$ /g, "").replace(",", "."))),
+      0
+    )
+    .toFixed(2);
+};
+
+const EmptyContentError = () => {
+  return (
+    <div className="cart-error">
+      <figure className="cart-error__img">
+        <img src={EmptyCartGif} alt="Carrinho vazio" />
+      </figure>
+      <div className="cart-error--highlight">Ops!</div>
+      <span>Sua sacola está vazia =( </span>
+    </div>
+  );
+};
+
+const Content = (props) => {
+  const { cartProducts } = props;
+
+  if (cartProducts.length === 0) return <EmptyContentError />;
 
   return (
     <>
@@ -31,9 +47,15 @@ const CartList = () => {
             <CardShop key={prod.style} product={prod} />
           ))}
       </div>
-      <Subtotal subtotal={calculateTotal()} />
+      <Subtotal subtotal={subtotal(cartProducts)} />
     </>
   );
+};
+
+const CartList = () => {
+  const cartProducts = useSelector((state) => state.cart.products);
+
+  return <Content cartProducts={cartProducts} />;
 };
 
 CartList.propTypes = {

@@ -1,0 +1,23 @@
+@import "../../assets/stylesheets/_variables.scss";
+.cart-error {
+  margin: 0 auto;
+  padding: 10vh 0;
+  width: 50vh;
+  font-size: $font-size-22;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  align-content: center;
+
+  &__img img {
+    max-width: 50vh;
+    max-height: 100vh;
+  }
+  &--highlight {
+    color: $color-primary;
+    font-size: $font-size-24;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+}
