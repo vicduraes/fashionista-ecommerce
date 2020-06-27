@@ -77,7 +77,7 @@ const SearchBar = () => {
 
   return (
     <>
-      <div className="search">
+      <div className="search" data-testid="search">
         <div className="container">
           <input
             type="text"
