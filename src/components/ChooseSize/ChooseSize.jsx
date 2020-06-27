@@ -8,8 +8,8 @@ const ChooseSize = (props) => {
 
   const [idButton, setIdButton] = useState("");
 
-  const handleClickButton = (id, size) => {
-    setSelectedSize(size);
+  const handleClickButton = (id) => {
+    setSelectedSize(id);
     return setIdButton(id);
   };
 
@@ -28,7 +28,7 @@ const ChooseSize = (props) => {
                     "field-choose-size__size-button--click":
                       idButton === size.sku,
                   })}
-                  onClick={() => handleClickButton(size.sku, size.size)}
+                  onClick={() => handleClickButton(size.sku)}
                 >
                   {size.size}
                 </button>

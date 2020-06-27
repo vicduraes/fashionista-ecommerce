@@ -32,14 +32,20 @@ const CardShop = ({ product }) => {
     dispatch(deleteFromCart(slug));
   }
 
+  const formatSize = (sku) => {
+    const splitArr = sku.split("_");
+    const size = splitArr[splitArr.length - 1];
+    return size;
+  };
+
   return (
     <div className="card-shop">
       <div className="card-shop__description">
         <div className="card-shop__img">
           <Link
             to={{
-              pathname: `/produto/${product.style}`,
-              state: { id: product.style },
+              pathname: `/produto/${product.code_color}`,
+              state: { id: product.code_color },
             }}
             style={{ textDecoration: "none" }}
           >
@@ -58,7 +64,7 @@ const CardShop = ({ product }) => {
           <span className="card-shop__product-name">
             <ProductName text={product.name} size="medium" />
           </span>
-          <span className="card-shop__size">{product.size}</span>
+          <span className="card-shop__size">{formatSize(product.size)}</span>
           <div className="card-shop__quantity">
             <button type="button" className="card-shop__quantity-btn">
               <FontAwesomeIcon
