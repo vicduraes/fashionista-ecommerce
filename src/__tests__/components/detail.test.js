@@ -1,10 +1,11 @@
 import React from "react";
 import { render } from "@testing-library/react";
+import * as REACT_REDUX from "react-redux";
 
 import Detail from "../../components/Detail/Detail";
 
 const mockProduct = {
-  name: "VESTIDO TRANSPASSE BOW",
+  name: "Regata",
   regular_price: "R$ 199,90",
   actual_price: "R$ 199,90",
   discount_percentage: "",
@@ -20,13 +21,26 @@ const mockProduct = {
   ],
 };
 
+REACT_REDUX.useDispatch = () => jest.fn();
+
 describe("Component Detail", () => {
   it("Should render the specific product", () => {
+    REACT_REDUX.useSelector = jest.fn();
     const { getByTestId } = render(<Detail product={mockProduct} />);
     const container = getByTestId("detail-test");
+    const firstChildren = container.children;
+    const detailInfo = firstChildren[1];
+    const detailBox = detailInfo.children[0];
+    const productTitle = detailBox.children[0];
+    const productTitlex = detailBox.children[1];
 
-    expect(container).toHaveClass("detail");
     expect(container.children.length).toBe(2);
+    expect(container).toHaveClass("detail");    
+    expect(detailInfo).toHaveClass("detail__info");    
+    expect(productTitle).toHaveTextContent("Regata");
+    expect(productTitlex).toHaveTextContent("R$ 199,90");
+   
 
   });
+  
 });
