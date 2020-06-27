@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -7,23 +7,19 @@ import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import "./ShoppingCart.scss";
 
 const ShoppingCart = (props) => {
-  const { handleClick } = props;
-  const pegaDoLocal = localStorage.getItem("amoraCart") || "{}";
-  const jsonDoLocal = JSON.parse(pegaDoLocal);
-  const count = jsonDoLocal.count || 0;
-
-  const [countProducts] = useState(count);
+  const { handleClick, count } = props;
 
   return (
     <button type="button" className="shopping-cart" onClick={handleClick}>
       <FontAwesomeIcon icon={faShoppingCart} />
-      <i data-count={countProducts} className="shopping-cart--badge" />
+      <i data-count={count} className="shopping-cart--badge" />
     </button>
   );
 };
 
 ShoppingCart.propTypes = {
   handleClick: PropTypes.func.isRequired,
+  count: PropTypes.number.isRequired,
 };
 
 export default ShoppingCart;

@@ -16,7 +16,6 @@ import "./Navbar.scss";
 
 const Navbar = () => {
   const products = useSelector((state) => state.cart.products);
-  console.log(products);
 
   const [showSearch, setShowSearch] = useState(false);
   const [showCart, setShowCart] = useState(false);
@@ -27,11 +26,9 @@ const Navbar = () => {
   const openModalCart = () => setShowCart(true);
   const closeModalCart = () => setShowCart(false);
 
-  const currentCartProducts = localStorage.getItem("amoraCart")
-    ? localStorage.getItem("amoraCart")
-    : false;
-
-  const [cartProducts] = useState(JSON.parse(currentCartProducts));
+  const quantityProductCart = () => {
+    return products.reduce((total, next) => (total += next.quantity), 0);
+  };
 
   return (
     <>
@@ -60,23 +57,17 @@ const Navbar = () => {
                 <SearchBar />
               </Modal>
             </span>
-            <ShoppingCart handleClick={openModalCart} />
+            <ShoppingCart
+              handleClick={openModalCart}
+              count={quantityProductCart()}
+            />
             <Modal closeModal={closeModalCart} show={showCart}>
               <ModalHeader
                 text="Sacola"
-                total={
-                  cartProducts.products !== undefined
-                    ? cartProducts.products.length
-                    : 0
-                }
+                total={quantityProductCart()}
                 closeModal={closeModalCart}
               />
-              {/* <div className="cards-box">
-                {products.map((product) => (
-                  <CardShop product={product} />
-                ))}
-              </div> */}
-              <CartList cartProducts={cartProducts} />
+              <CartList />
             </Modal>
           </div>
         </div>

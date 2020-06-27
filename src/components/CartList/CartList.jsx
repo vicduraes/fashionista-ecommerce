@@ -1,29 +1,37 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 import PropTypes from "prop-types";
 import CardShop from "../CardShop/CardShop";
 import Subtotal from "../Subtotal/Subtotal";
 
-const CartList = (props) => {
-  const { cartProducts } = props;
+const CartList = () => {
+  const cartProducts = useSelector((state) => state.cart.products);
+
+  function calculateTotal() {
+    if (!cartProducts) {
+      return 0;
+    }
+
+    return cartProducts
+      .reduce(
+        (total, next) =>
+          (total +=
+            next.quantity *
+            Number(next.price.replace(/R\$ /g, "").replace(",", "."))),
+        0
+      )
+      .toFixed(2);
+  }
 
   return (
     <>
       <div className="cards-box">
         {cartProducts &&
-          cartProducts.products.map((prod) => (
-            <Link
-              to={{
-                pathname: `/produto/${prod.style}`,
-                state: { id: prod.style },
-              }}
-              style={{ textDecoration: "none" }}
-            >
-              <CardShop key={prod.style} product={prod} />
-            </Link>
+          cartProducts.map((prod) => (
+            <CardShop key={prod.style} product={prod} />
           ))}
       </div>
-      <Subtotal subtotal="100" />
+      <Subtotal subtotal={calculateTotal()} />
     </>
   );
 };

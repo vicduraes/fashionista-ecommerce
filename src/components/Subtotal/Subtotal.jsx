@@ -5,7 +5,7 @@ import "./Subtotal.scss";
 
 const Subtotal = (props) => {
   const { subtotal } = props;
-  const text = `Subtotal - ${subtotal}`;
+  const text = `Subtotal - R$ ${subtotal}`;
 
   return (
     <div className="subtotal">
