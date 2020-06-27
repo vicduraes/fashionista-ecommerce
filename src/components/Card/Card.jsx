@@ -13,7 +13,7 @@ const Card = (props) => {
   const discountPercentage = ` - ${product.discount_percentage}`;
 
   return (
-    <div className="card">
+    <div className="card" data-testid="card">
       <div className="card__img">
         <ProductImg src={product.image} imgDesciption={product.name} />
         {hasDiscount ? (

@@ -26,7 +26,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="navbar">
+      <nav className="navbar" data-testid="navbar">
         <div className="navbar__elements container">
           <span className="navbar__arrow-button">
             <BackArrowIcon />
