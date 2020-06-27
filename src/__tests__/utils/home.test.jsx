@@ -1,6 +1,6 @@
 import { enableFetchMocks } from "jest-fetch-mock";
 
-const catalog = [
+const mockCatalog = [
   {
     name: "VESTIDO TRANSPASSE BOW",
     style: "20002605",

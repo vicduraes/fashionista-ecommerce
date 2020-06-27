@@ -17,14 +17,18 @@ const Card = (props) => {
       <div className="card__img">
         <ProductImg src={product.image} imgDesciption={product.name} />
         {hasDiscount ? (
-          <span className="card__discount">{discountPercentage}</span>
+          <span className="card__discount" data-testid="card-discount">
+            {discountPercentage}
+          </span>
         ) : null}
       </div>
 
       <div className="card__description">
         <ProductName text={product.name} size="small" />
         {hasDiscount ? (
-          <span className="card__price-old">{product.regular_price}</span>
+          <span className="card__price-old" data-testid="old-price">
+            {product.regular_price}
+          </span>
         ) : null}
         <ProductPrice price={product.actual_price} size="small" />
       </div>

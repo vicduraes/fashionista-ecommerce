@@ -12,7 +12,6 @@ import Card from "../../components/Card/Card";
 import Loading from "../../components/Loading/Loading";
 import Error from "../../components/Error/Error";
 
-
 import "./Home.scss";
 
 const Products = (props) => {
@@ -63,7 +62,7 @@ const Home = () => {
   return (
     <>
       <Navbar />
-      <div className="container">
+      <div className="container" data-testid="catalog">
         <Catalog catalog={catalog} error={error} loading={loading} />
       </div>
     </>
