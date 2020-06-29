@@ -1,68 +1,114 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![codenation-banner](./public/docs/banner-codenation.jpg)
 
-## Available Scripts
+# Projeto Final - Codenation
 
-In the project directory, you can run:
+Desenvolver as principais funcionalidades de um e-commerce de moda feminina, o **AMORA**,
+garantindo a melhor experiência possível para os usuários interagirem com os produtos. 
 
-### `yarn start`
+![amora-demo](./src/docs/images/concrete-demo.gif)
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+**[https://amora.netlify.app](https://amora.netlify.app)**
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## Requisitos do desafio
 
-### `yarn test`
+### Regras
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Regras | Feito
+---------- | ------
+Deve implementar as funcionalidades apresentadas nos wireframes / layouts | ✔️
+Deve ser mobile first, possuindo uma experiência satisfatória tanto em mobile quanto em desktop | ✔️
+Deve consumir a API do catálogo de produtos | ✔️
+O estado global da aplicação deverá ser gerenciado com Redux | ✔️
+Deve ser um SPA (Single Page Application) | ✔️
+Todos os produtos da API devem ser exibidos | ✔️
+Utilize BEM CSS para escrever os estilos | ✔️
+Deve-se fazer deploy do projeto, servindo-o no Netlify | ✔️
+Não utilize frameworks CSS como Bootstrap, Foundation e afins | ✔️
 
-### `yarn build`
+### Requisitos obrigatórios
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Requisitos | Feito
+------------ | ------
+Para cada item do catálogo de produtos as seguintes informações devem estar na página: Imagem, Nome, Preço, Status “Em promoção”, Preço promocional (se disponível), Tamanhos disponíveis, Selo “Promoção” | ✔️
+Deve ser possível adicionar itens por tamanho no carrinho de compras | ✔️
+Deve ser possível visualizar os itens adicionados no carrinho de compras, exibindo imagem, nome, preço e quantidade | ✔️
+Deve ser possível remover itens do carrinho de compras | ✔️
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+### Requisitos opcionais
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Requisitos | Feito
+--------------- | ------
+O carrinho de compras deve persistir entre reloads de página | ✔️
+Alguns produtos não tem todos os tamanhos disponíveis, mostre apenas os tamanhos disponíveis em estoque | ✔️
+Implemente a funcionalidade de busca em tempo real | ✔️
 
-### `yarn eject`
+## Build With
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- [Yarn package](https://yarnpkg.com/lang/en/) ![yarn-badge](https://img.shields.io/badge/yarn-1.19.1-blue)
+- [React.js](https://github.com/facebook/react) - This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- [axios](https://github.com/axios/axios) - Promise based HTTP client for the browser.
+- [react-router-dom](https://reacttraining.com/react-router/web/guides/quick-start) - The components router. 
+- [VsCode](https://code.visualstudio.com/) - Code Editor | IDE
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Assets
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- CSS com [BEM](http://getbem.com/)
+- [Google Fonts - Montserrat](https://fonts.google.com/specimen/Raleway)
+- [Layout - FIGMA](https://www.figma.com/file/utlmDWLvAW51Hljp6FUuts/Projeto-Final-Codenation-SQUAD-1?node-id=0%3A1)
+- [API](https://5e9935925eabe7001681c856.mockapi.io/api/v1/catalog)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Getting Started
 
-## Learn More
+### Requirements
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+To run this project you will need [![node-badge](https://img.shields.io/badge/node-v12.13.1-blue)](https://nodejs.org/en/) installed in your computer, if you have not, you can click on node badge and the link will redirect to the node page installer, after that the environment it will ready for start.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Installation
 
-### Code Splitting
+Download the project or clone it, then enter the `./concrete-app` directory and run:
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+```
+yarn install
+```
 
-### Analyzing the Bundle Size
+to install all the project dependencies, or:
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+```
+npm install
+```
 
-### Making a Progressive Web App
+if you are using [![npm](https://img.shields.io/badge/npm-6.12.1-blue)](https://www.npmjs.com/) or higher as package manager.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+<!-- ## Available Scripts
 
-### Advanced Configuration
+In the project directory `./concrete-app`, you can run: -->
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+### Running
 
-### Deployment
+To run the app in the development mode, enter the `./concrete-app` directory and run:
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+```
+yarn start
+```
 
-### `yarn build` fails to minify
+to open [http://localhost:3000](http://localhost:3000) to view it in the browser, or:
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+```
+npm start
+```
+
+if you are using [![npm](https://img.shields.io/badge/npm-6.12.1-blue)](https://www.npmjs.com/) or higher as package manager.
+
+The page will reload if you make edits. You will also see any lint errors in the console.
+
+## Author
+
+[Victoria Durães](https://www.linkedin.com/in/victoria-duraes/) - desenvolvedora front-end na TREND2B
+
+[Rafaela Guimarães](https://www.linkedin.com/in/rafaela-guimaraes-santos/) - desenvolvedora python na INOA
+
+[Tammy Fagá](https://www.linkedin.com/in/tammy-fag%C3%A1-7229b7129/) - desenvolvedora front-end no PORTAL R7
+
+[Raissa Martins](https://www.linkedin.com/in/raissamartinsmenezes/) - desenvolvedora mobile na CONCRETE
+
+[Marcia Corte](https://www.linkedin.com/in/marcia-corte/) - analista de negócios da AVANADE
