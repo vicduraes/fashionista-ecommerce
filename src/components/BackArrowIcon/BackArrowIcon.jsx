@@ -8,14 +8,16 @@ import "./BackArrowIcon.scss";
 
 const BackArrowIcon = (props) => {
   const { closeFunction, show } = props;
-  return (
-    show ? 
-    <button type="button" className="back-arrow" onClick={closeFunction}>
+  return show ? (
+    <button
+      type="button"
+      aria-label="Voltar"
+      className="back-arrow"
+      onClick={closeFunction}
+    >
       <FontAwesomeIcon icon={faArrowLeft} />
     </button>
-    : 
-    null  
-  );
+  ) : null;
 };
 
 BackArrowIcon.propTypes = {

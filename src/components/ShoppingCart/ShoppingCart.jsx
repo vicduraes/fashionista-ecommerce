@@ -10,7 +10,12 @@ const ShoppingCart = (props) => {
   const { handleClick, count } = props;
 
   return (
-    <button type="button" className="shopping-cart" onClick={handleClick}>
+    <button
+      type="button"
+      aria-label="carrinho"
+      className="shopping-cart"
+      onClick={handleClick}
+    >
       <FontAwesomeIcon icon={faShoppingCart} />
       <i data-count={count} className="shopping-cart--badge" />
     </button>
