@@ -11,7 +11,12 @@ const SearchButton = (props) => {
 
   return (
     <>
-      <button type="button" className="search-button" onClick={handleClick}>
+      <button
+        type="button"
+        aria-label="buscar produto"
+        className="search-button"
+        onClick={handleClick}
+      >
         <FontAwesomeIcon icon={faSearch} />
       </button>
     </>

@@ -66,7 +66,11 @@ const CardShop = ({ product }) => {
           </span>
           <span className="card-shop__size">{formatSize(product.size)}</span>
           <div className="card-shop__quantity">
-            <button type="button" className="card-shop__quantity-btn">
+            <button
+              type="button"
+              aria-label="Diminuir quantidade"
+              className="card-shop__quantity-btn"
+            >
               <FontAwesomeIcon
                 className="card-shop__quantity-icon"
                 icon={faMinusCircle}
@@ -76,7 +80,11 @@ const CardShop = ({ product }) => {
             <span className="card-shop__quantity-number">
               {product.quantity}
             </span>
-            <button type="button" className="card-shop__quantity-btn">
+            <button
+              type="button"
+              aria-label="Aumentar quantidade"
+              className="card-shop__quantity-btn"
+            >
               <FontAwesomeIcon
                 className="card-shop__quantity-icon"
                 icon={faPlusCircle}

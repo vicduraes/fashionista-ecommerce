@@ -41,6 +41,7 @@ const ScrollToTop = () => {
   return isHidden ? (
     <button
       type="button"
+      aria-label="Voltar ao topo"
       className="scroll-to-top"
       ref={myRef}
       onClick={executeScroll}
