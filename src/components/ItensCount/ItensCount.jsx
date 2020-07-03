@@ -8,7 +8,7 @@ const ItensCount = (props) => {
   const text = `${totalCount} Itens`;
 
   return (
-    <div className="itens-count">
+    <div className="itens-count" data-testid="itens-count">
       <span className="itens-count__line">{}</span>
       <p className="itens-count__itens">{text}</p>
       <span className="itens-count__line">{}</span>

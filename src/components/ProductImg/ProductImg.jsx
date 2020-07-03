@@ -7,11 +7,11 @@ import "./ProductImg.scss";
 
 const ProductImg = (props) => {
   const { src, imgDesciption } = props;
-  const image = src === '' ? imgDefault : src;
+  const image = src === "" ? imgDefault : src;
 
   return (
     <figure className="product-img">
-      <img src={image} alt={imgDesciption} />
+      <img data-testid="product-img" src={image} alt={imgDesciption} />
     </figure>
   );
 };

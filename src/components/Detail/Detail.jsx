@@ -18,7 +18,7 @@ const Detail = (props) => {
 
   return (
     <>
-      <div className="detail">
+      <div className="detail" data-testid="detail-test">
         <ProductImg src={product.image} imgDesciption={product.name} />
         <div className="detail__info">
           <div className="detail__box">
