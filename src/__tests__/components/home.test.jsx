@@ -1,14 +1,12 @@
 import React from "react";
-import { render, within } from "@testing-library/react";
-import * as REACT_REDUX from "react-redux";
+import { render } from "@testing-library/react";
 
-import Navbar from "../../components/Navbar/Navbar";
 import ItensCount from "../../components/ItensCount/ItensCount";
 import Card from "../../components/Card/Card";
 import ProductImg from "../../components/ProductImg/ProductImg";
 import Error from "../../components/Error/Error";
 
-import * as mockCatalog from "../products.json";
+import Products from "../products.json";
 
 const mockProduct1 = {
   name: "REGATA ALCINHA FOLK",
@@ -33,27 +31,9 @@ const mockProduct2 = {
   image: "",
 };
 
-REACT_REDUX.useDispatch = () => jest.fn();
-
-describe("Navbar component", () => {
-  it("Should render navbar", async () => {
-    REACT_REDUX.useSelector = jest.fn().mockReturnValueOnce(mockCatalog);
-    const { getByTestId } = render(
-      <>
-        <div id="modal-root" />
-        <Navbar />
-      </>
-    );
-    const container = getByTestId("navbar");
-    expect(container).toHaveClass("navbar");
-  });
-});
-
 describe("ItensCount component", () => {
   it("Should render itens count", () => {
-    const { getByTestId } = render(
-      <ItensCount totalCount={mockCatalog.length} />
-    );
+    const { getByTestId } = render(<ItensCount totalCount={Products.length} />);
     const container = getByTestId("itens-count");
     expect(container).toHaveClass("itens-count");
     expect(container.children.length).toBe(3);
