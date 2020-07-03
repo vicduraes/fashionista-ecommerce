@@ -7,6 +7,7 @@
   color: $color-black;
   overflow-y: auto;
   z-index: 1;
+  transition: opacity 0.2s ease;
 }
 
 .overlay {
@@ -24,7 +25,9 @@
 }
 
 .hide {
-  display: none;
+  height: 0;
+  opacity: 0;
+  visibility: hidden;
 }
 
 .cards-box {

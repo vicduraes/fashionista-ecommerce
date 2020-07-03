@@ -1,5 +1,4 @@
 import React from "react";
-import uuid from "react-uuid";
 import { useSelector } from "react-redux";
 import PropTypes from "prop-types";
 import CardShop from "../CardShop/CardShop";
@@ -44,7 +43,9 @@ const Content = (props) => {
     <>
       <div className="cards-box">
         {cartProducts &&
-          cartProducts.map((prod) => <CardShop key={uuid()} product={prod} />)}
+          cartProducts.map((prod) => (
+            <CardShop key={prod.code_color} product={prod} />
+          ))}
       </div>
       <Subtotal subtotal={subtotal(cartProducts)} />
     </>

@@ -1,5 +1,4 @@
 import React, { useEffect, useMemo } from "react";
-import uuid from "react-uuid";
 import { useSelector, useDispatch } from "react-redux";
 import { bindActionCreators } from "redux";
 import { Link } from "react-router-dom";
@@ -24,7 +23,7 @@ const Products = (props) => {
       <div className="product-catalog">
         {catalog.map((product) => (
           <Link
-            key={uuid()}
+            key={product.code_color}
             to={{
               pathname: `/produto/${product.code_color}`,
               state: { id: product.code_color },
@@ -63,7 +62,7 @@ const Home = () => {
 
   return (
     <>
-      <Navbar showArrow={false}/>
+      <Navbar showArrow={false} />
       <div className="container">
         <Catalog catalog={catalog} error={error} loading={loading} />
       </div>
