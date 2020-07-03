@@ -60,9 +60,9 @@ const CartList = () => {
 
 CartList.propTypes = {
   cartProducts: PropTypes.shape({
-    products: PropTypes.object.isRequired,
+    products: PropTypes.object,
     style: PropTypes.string.isRequired,
-  }).isRequired,
+  }),
 };
 
 export default CartList;

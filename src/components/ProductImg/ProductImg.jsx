@@ -18,10 +18,11 @@ const ProductImg = (props) => {
 
 ProductImg.defaultProps = {
   imgDesciption: "",
+  src: imgDefault,
 };
 
 ProductImg.propTypes = {
-  src: PropTypes.string.isRequired,
+  src: PropTypes.string,
   imgDesciption: PropTypes.string,
 };
 
