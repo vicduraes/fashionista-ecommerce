@@ -5,7 +5,7 @@
 Desenvolver as principais funcionalidades de um e-commerce de moda feminina, o **AMORA**,
 garantindo a melhor experiência possível para os usuários interagirem com os produtos. 
 
-![amora-demo](./src/docs/images/concrete-demo.gif)
+![amora-demo](./public/docs/amora-gif.gif)
 
 **[https://amora.netlify.app](https://amora.netlify.app)**
 
@@ -42,13 +42,24 @@ O carrinho de compras deve persistir entre reloads de página | ✔️
 Alguns produtos não tem todos os tamanhos disponíveis, mostre apenas os tamanhos disponíveis em estoque | ✔️
 Implemente a funcionalidade de busca em tempo real | ✔️
 
-## Build With
+## Construido com:
 
 - [Yarn package](https://yarnpkg.com/lang/en/) ![yarn-badge](https://img.shields.io/badge/yarn-1.19.1-blue)
-- [React.js](https://github.com/facebook/react) - This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-- [axios](https://github.com/axios/axios) - Promise based HTTP client for the browser.
-- [react-router-dom](https://reacttraining.com/react-router/web/guides/quick-start) - The components router. 
+- [React.js](https://github.com/facebook/react) - This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app)
+- [react-router-dom](https://reacttraining.com/react-router/web/guides/quick-start) - The components router 
 - [VsCode](https://code.visualstudio.com/) - Code Editor | IDE
+- redux-saga
+- redux-persist
+- react-hooks
+- fontawesome
+- jest
+- testing-library
+- classnames
+- immer
+- prop-types
+- eslint-airbnb
+- prettier
+- sass
 
 ## Assets
 
@@ -57,51 +68,53 @@ Implemente a funcionalidade de busca em tempo real | ✔️
 - [Layout - FIGMA](https://www.figma.com/file/utlmDWLvAW51Hljp6FUuts/Projeto-Final-Codenation-SQUAD-1?node-id=0%3A1)
 - [API](https://5e9935925eabe7001681c856.mockapi.io/api/v1/catalog)
 
-## Getting Started
+## Instalando o projeto
 
-### Requirements
+### Requisitos
 
-To run this project you will need [![node-badge](https://img.shields.io/badge/node-v12.13.1-blue)](https://nodejs.org/en/) installed in your computer, if you have not, you can click on node badge and the link will redirect to the node page installer, after that the environment it will ready for start.
+Para executar esse projeto você vai precisar do [![node-badge](https://img.shields.io/badge/node-v12.13.1-blue)](https://nodejs.org/en/) instalado em seu computador, se você não tiver, você pode clicar no distintivo do node e o link será redirecionado para a página de instalação do node, depois de instalar, o ambiente já estará pronto para você começar.
 
-### Installation
+### Instalação das dependências
 
-Download the project or clone it, then enter the `./concrete-app` directory and run:
+Faça o download do projeto clonando o repositório, entre no diretório `./fashionista-ecommerce` e no terminal rode:
 
 ```
 yarn install
 ```
 
-to install all the project dependencies, or:
+para instalar todas as dependências do projeto, ou então rode:
 
 ```
 npm install
 ```
-
-if you are using [![npm](https://img.shields.io/badge/npm-6.12.1-blue)](https://www.npmjs.com/) or higher as package manager.
+se você estiver usando [![npm](https://img.shields.io/badge/npm-6.12.1-blue)](https://www.npmjs.com/)
+ou uma versão superior como gerenciador de pacotes.
 
 <!-- ## Available Scripts
 
 In the project directory `./concrete-app`, you can run: -->
 
-### Running
+### Rodando o projeto
 
-To run the app in the development mode, enter the `./concrete-app` directory and run:
+Para rodar o projeto em modo de desenvolvimento, entre no diretório `./fashionista-ecommerce` e no terminal rode:
+
 
 ```
 yarn start
 ```
 
-to open [http://localhost:3000](http://localhost:3000) to view it in the browser, or:
+para abrir o [http://localhost:3000](http://localhost:3000) e ver o projeto no browser, ou:
 
 ```
 npm start
 ```
 
-if you are using [![npm](https://img.shields.io/badge/npm-6.12.1-blue)](https://www.npmjs.com/) or higher as package manager.
+se você estiver usando [![npm](https://img.shields.io/badge/npm-6.12.1-blue)](https://www.npmjs.com/)
+ou uma versão superior como gerenciador de pacotes.
 
-The page will reload if you make edits. You will also see any lint errors in the console.
+A página será recarregada se você fizer edições. Você também verá os erros no console.
 
-## Author
+## Autoras
 
 [Victoria Durães](https://www.linkedin.com/in/victoria-duraes/) - desenvolvedora front-end na TREND2B
 
