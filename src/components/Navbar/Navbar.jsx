@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { BrowserRouter as Router, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 import Modal from "../Modal/Modal";
@@ -35,25 +35,21 @@ const Navbar = (props) => {
     <>
       <nav className="navbar" data-testid="navbar">
         <div className="navbar__elements container">
-          { showArrow ?
-          <span className="navbar__arrow-button">
-            <Link to="/">
-              <BackArrowIcon show={showArrow}/>
-            </Link>
-          </span>
-          : 
-          null
-          }
-          <figure>
-            <Router>
-              <Link to="/" style={{ textDecoration: "none" }}>
-                <img
-                  alt="logo da Fashionista"
-                  className="navbar__logo"
-                  src={logo}
-                />
+          {showArrow ? (
+            <span className="navbar__arrow-button">
+              <Link to="/">
+                <BackArrowIcon show={showArrow} />
               </Link>
-            </Router>
+            </span>
+          ) : null}
+          <figure>
+            <Link to="/" style={{ textDecoration: "none" }}>
+              <img
+                alt="logo da Fashionista"
+                className="navbar__logo"
+                src={logo}
+              />
+            </Link>
           </figure>
           <div className="navbar__elements--desktop">
             <span className="navbar__search-button">

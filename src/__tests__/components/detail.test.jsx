@@ -1,5 +1,6 @@
 import React from "react";
 import { render } from "@testing-library/react";
+import { MemoryRouter } from "react-router-dom";
 import * as REACT_REDUX from "react-redux";
 
 import Detail from "../../components/Detail/Detail";
@@ -26,7 +27,11 @@ REACT_REDUX.useDispatch = () => jest.fn();
 describe("Component Detail", () => {
   it("Should render the specific product", () => {
     REACT_REDUX.useSelector = jest.fn();
-    const { getByTestId } = render(<Detail product={mockProduct} />);
+    const { getByTestId } = render(
+      <MemoryRouter>
+        <Detail product={mockProduct} />
+      </MemoryRouter>
+    );
     const container = getByTestId("detail-test");
     const firstChildren = container.children;
     const detailInfo = firstChildren[1];
@@ -35,12 +40,9 @@ describe("Component Detail", () => {
     const productTitlex = detailBox.children[1];
 
     expect(container.children.length).toBe(2);
-    expect(container).toHaveClass("detail");    
-    expect(detailInfo).toHaveClass("detail__info");    
+    expect(container).toHaveClass("detail");
+    expect(detailInfo).toHaveClass("detail__info");
     expect(productTitle).toHaveTextContent("Regata");
     expect(productTitlex).toHaveTextContent("R$ 199,90");
-   
-
   });
-  
 });
