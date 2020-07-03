@@ -25,7 +25,7 @@ Modal.defaultProps = {
 };
 
 Modal.propTypes = {
-  show: PropTypes.func.isRequired,
+  show: PropTypes.bool.isRequired,
 };
 
 export default Modal;

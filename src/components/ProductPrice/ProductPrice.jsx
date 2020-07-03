@@ -17,7 +17,7 @@ ProductPrice.defaultProps = {
 };
 
 ProductPrice.propTypes = {
-  price: PropTypes.number.isRequired,
+  price: PropTypes.string,
   size: PropTypes.oneOf(["small", "medium", "large"]),
 };
 

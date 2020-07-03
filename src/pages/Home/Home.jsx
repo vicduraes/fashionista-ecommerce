@@ -63,7 +63,7 @@ const Home = () => {
   return (
     <>
       <Navbar showArrow={false} />
-      <div className="container">
+      <div className="container" data-testid="catalog">
         <Catalog catalog={catalog} error={error} loading={loading} />
       </div>
     </>

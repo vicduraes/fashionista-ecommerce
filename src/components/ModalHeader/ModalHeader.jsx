@@ -19,9 +19,9 @@ const ModalHeader = (props) => {
 };
 
 ModalHeader.propTypes = {
-  total: PropTypes.number.isRequired,
+  total: PropTypes.number,
   text: PropTypes.string.isRequired,
-  closeModal: PropTypes.func.isRequired,
+  closeModal: PropTypes.func,
 };
 
 export default ModalHeader;

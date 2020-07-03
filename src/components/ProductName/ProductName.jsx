@@ -12,10 +12,11 @@ const ProductName = (props) => {
 
 ProductName.defaultProps = {
   size: "medium",
+  text: "Descrição indisponível"
 };
 
 ProductName.propTypes = {
-  text: PropTypes.string.isRequired,
+  text: PropTypes.string,
   size: PropTypes.oneOf(["small", "medium", "large"]),
 };
 

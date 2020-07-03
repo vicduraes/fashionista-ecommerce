@@ -9,7 +9,7 @@ const ProductInstallment = (props) => {
 };
 
 ProductInstallment.propTypes = {
-  text: PropTypes.string.isRequired,
+  text: PropTypes.string,
 };
 
 export default ProductInstallment;

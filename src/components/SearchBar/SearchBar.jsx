@@ -54,6 +54,7 @@ const SearchBar = () => {
   const { catalog } = useSelector((state) => state.catalog);
 
   const removeSpecialChar = (text) => {
+    if (!text) return "";
     return text
       .toLowerCase()
       .normalize("NFD")
@@ -77,7 +78,7 @@ const SearchBar = () => {
 
   return (
     <>
-      <div className="search">
+      <div className="search" data-testid="search">
         <div className="container">
           <input
             type="text"

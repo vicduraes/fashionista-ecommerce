@@ -21,7 +21,7 @@ const BackArrowIcon = (props) => {
 };
 
 BackArrowIcon.propTypes = {
-  closeFunction: PropTypes.func.isRequired,
+  closeFunction: PropTypes.func,
 };
 
 export default BackArrowIcon;

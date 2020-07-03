@@ -33,17 +33,15 @@ const Navbar = (props) => {
 
   return (
     <>
-      <nav className="navbar">
+      <nav className="navbar" data-testid="navbar">
         <div className="navbar__elements container">
-          { showArrow ?
-          <span className="navbar__arrow-button">
-            <Link to="/">
-              <BackArrowIcon show={showArrow}/>
-            </Link>
-          </span>
-          : 
-          null
-          }
+          {showArrow ? (
+            <span className="navbar__arrow-button">
+              <Link to="/">
+                <BackArrowIcon show={showArrow} />
+              </Link>
+            </span>
+          ) : null}
           <figure>
             <Link to="/" style={{ textDecoration: "none" }}>
               <img
